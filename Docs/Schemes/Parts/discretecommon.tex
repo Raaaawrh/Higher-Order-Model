@@ -1,0 +1,107 @@
+\section*{Дискретная сетка}
+
+В пространстве $ \{ x,y,z \} \in \mathbb{R}^3 $ строится сетка
+
+Перед введением схемы по z производится координатное отображение.
+\begin{equation*}
+    \left.
+        \xi
+    \right|_{x, y}
+    =
+    \frac
+        {
+            \left.
+                z
+            \right|_{x, y}
+        }
+        {s(x, y) - b(x, y)}
+\end{equation*}
+
+\begin{itemize}
+    \item равномерная сетка по $ x $: $ \{ x_i \} : \quad x_i = i \cdot \Delta x $
+    \item равномерная сетка по $ y $: $ \{ y_j \} : \quad y_j = j \cdot \Delta y $
+    \item неравномерная сетка по $ \xi $ : $ \{ \xi_k \} $
+    \item некоторая сетка по времени $t$: $ \{t_{l}\}$
+\end{itemize}
+
+Указанные индексные обозначения закрепим за координатами в 
+пространстве и времени, т.е. $i$ будет нумеровать узлы по 
+координате $x$, $j$ -- по координате $y$, $k$ -- по 
+координате $z$ и $l$ -- по времени $t$.
+
+Также для получения схем, включающих $ z $ нужны следующие соотношения.
+
+\begin{equation*}
+    \begin{split}
+        &
+        \Delta \xi_{k - \onehalf}
+        =
+        \xi_{k} - \xi_{k - 1}
+        \\
+        &
+        \Delta \xi_{k + \onehalf}
+        =
+        \xi_{k + 1} - \xi_{k}
+        \\
+        &
+        \Delta \xi_{k}
+        =
+        \frac
+            {\Delta \xi_{k + \onehalf} + \Delta \xi_{k - \onehalf}}
+            {2}
+        =
+        \frac
+            {\xi_{k+1} - \xi_{k-1}}
+            {2}
+        \\
+        &
+        f_{k - \onehalf}
+        =
+        \frac
+            {f_{k} + f_{k - 1}}
+            {2}
+        \\
+        &
+        f_{k + \onehalf}
+        =
+        \frac
+            {f_{k + 1} + f_{k}}
+            {2}
+        \\
+        &
+        f_{k}
+        =
+        \frac
+            {\Delta \xi_{k - \onehalf}}
+            {2 \Delta \xi_{k}}
+        f_{k + \onehalf}
+        +
+        \frac
+            {\Delta \xi_{k + \onehalf}}
+            {2 \Delta \xi_{k}}
+        f_{k - \onehalf}
+        \\
+        &
+        {\left(
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)}_{k}
+        =
+        \frac
+            {\Delta \xi_{k - \onehalf}}
+            {\Delta \xi_{k} \Delta \xi_{k + \onehalf}}
+        f_{k + \onehalf}
+        -
+        \frac
+            {\Delta \xi_{k + \onehalf}}
+            {\Delta \xi_{k} \Delta \xi_{k - \onehalf}}
+        f_{k - \onehalf}
+        +
+        2
+        \frac
+            {\Delta \xi_{k + \onehalf} - \Delta \xi_{k - \onehalf}}
+            {\Delta \xi_{k + \onehalf} \Delta \xi_{k - \onehalf}}
+        f_{k}
+    \end{split}
+\end{equation*}

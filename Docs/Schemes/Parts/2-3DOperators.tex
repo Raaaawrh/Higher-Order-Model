@@ -1,0 +1,2193 @@
+\section*{Схемы основных операторов}
+
+В данном разделе приведены дискретные схемы основных дифференциальных операторов.
+
+\subsection*{2D операторы}
+
+\begin{equation*}
+	\left.
+        \frac
+	        {\partial }
+	        {\partial x}
+	    \left(
+	        g
+	    	\frac
+	    	    {\partial f}
+	    	    {\partial x}
+	    \right)
+	\right._{i, j}
+	=
+	\frac
+	    {1}
+	    {\Delta x^2}
+	\left\{
+	    f_{i - 1, j}
+	    \left[
+		    g_{i - \onehalf, j}
+		\right]
+	    +
+	    f_{i, j}
+	    \left[
+		    -
+            g_{i - \onehalf, j}
+		    -
+            g_{i + \onehalf, j}
+	    \right]
+	    +
+	    f_{i + 1,j}
+	    \left[
+		    g_{i + \onehalf, j}
+	    \right]
+	\right\}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+	    \left.
+	        \frac
+                {\partial }
+                {\partial x}
+	        \left(
+	            g
+	            \frac
+	                {\partial f}
+	                {\partial y}
+	        \right)
+        \right._{i, j}
+	    = &
+	    \frac
+	        {1}
+	        {4 \Delta x \Delta y}
+	    \left\{
+	        f_{i - 1, j - 1}
+	        \left[
+                g_{i - \onehalf, j - \onehalf}
+            \right]
+	        +
+	        f_{i - 1, j}
+	       \left[
+	        	-
+                g_{i - \onehalf, j - \onehalf}
+	        	+
+                g_{i - \onehalf, j + \onehalf}
+	        \right]
+	        +
+        \right.
+        \\ &
+        \left.
+            +
+            \newline
+	        f_{i - 1, j + 1}
+	        \left[
+                -
+                g_{i - \onehalf, j + \onehalf}
+            \right]
+	        +
+	        f_{i, j - 1}
+	        \left[
+                g_{i - \onehalf, j - \onehalf}
+                -
+                g_{i + \onehalf, j - \onehalf}
+	    	\right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j}
+	        \left[
+                -
+                g_{i - \onehalf, j - \onehalf}
+                +
+                g_{i - \onehalf, j + \onehalf}
+                +
+                g_{i + \onehalf, j - \onehalf}
+                -
+                g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1}
+            \left[
+                -
+                g_{i - \onehalf, j + \onehalf}
+                +
+                g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+            f_{i + 1, j - 1}
+            \left[
+                -
+                g_{i + \onehalf, j - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j}
+            \left[
+                g_{i + \onehalf, j - \onehalf}
+                -
+                g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+            f_{i + 1, j + 1}
+            \left[
+                g_{i + \onehalf, j + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+	    \left.
+	        \frac
+                {\partial }
+                {\partial y}
+	        \left(
+	            g
+	            \frac
+	                {\partial f}
+	                {\partial x}
+	        \right)
+        \right._{i, j}
+	    = &
+	    \frac
+	        {1}
+	        {4 \Delta x \Delta y}
+	    \left\{
+	        f_{i - 1, j - 1}
+	        \left[
+                g_{i - \onehalf, j - \onehalf}
+            \right]
+	        +
+	        f_{i - 1, j}
+	       \left[
+	        	g_{i - \onehalf, j - \onehalf}
+	        	- g_{i - \onehalf, j + \onehalf}
+	        \right]
+	        +
+        \right.
+        \\ &
+        \left.
+            +
+            \newline
+	        f_{i - 1, j + 1}
+	        \left[
+                - g_{i - \onehalf, j + \onehalf}
+            \right]
+	        +
+	        f_{i, j-1}
+	        \left[
+                - g_{i - \onehalf, j - \onehalf}
+                + g_{i + \onehalf, j - \onehalf}
+	    	\right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j}
+	        \left[
+                - g_{i - \onehalf, j - \onehalf}
+                + g_{i - \onehalf, j + \onehalf}
+                + g_{i + \onehalf, j - \onehalf}
+                - g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+        \right. 
+        \\ &
+        \left.
+            +
+            f_{i, j + 1}
+            \left[
+                  g_{i - \onehalf, j + \onehalf}
+                - g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+            f_{i + 1, j - 1}
+            \left[
+                - g_{i + \onehalf, j - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j}
+            \left[
+                - g_{i + \onehalf, j - \onehalf}
+                + g_{i + \onehalf, j + \onehalf}
+            \right]
+            +
+            f_{i + 1, j + 1}
+            \left[
+                  g_{i + \onehalf, j + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+	\left.
+        \frac
+	        {\partial }
+	        {\partial y}
+	    \left(
+	        g
+	    	\frac
+	    	    {\partial f}
+	    	    {\partial y}
+	    \right)
+	\right._{i, j}
+	=
+	\frac
+	    {1}
+	    {\Delta y^2}
+	\left\{
+	    f_{i, j - 1}
+	    \left[
+		    g_{i, j - \onehalf}
+		\right]
+	    +
+	    f_{i,j}
+	    \left[
+		    - g_{i, j - \onehalf}
+		    - g_{i, j + \onehalf}
+	    \right]
+	    +
+	    f_{i,j + 1}
+	    \left[
+		    g_{i, j + \onehalf}
+	    \right]
+	\right\}
+\end{equation*}
+
+\subsection*{3D операторы}
+
+\begin{equation*}
+    \left.
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+    \right._{i, j, k}
+    =
+    \frac
+        {1}
+        {\Delta x^2}
+    \left\{
+        f_{i - 1, j, k}
+        \left[
+              g_{i - \onehalf, j, k}
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            - g_{i - \onehalf, j, k}
+            - g_{i + \onehalf, j, k}
+        \right]
+        +
+        f_{i + 1, j, k}
+        \left[
+              g_{i + \onehalf, j, k}
+        \right]
+    \right\}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left.
+            \frac
+                {\partial}
+                {\partial x}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial y}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {4 \Delta x \Delta y}
+        \left\{
+            f_{i - 1, j - 1, k}
+            \left[
+                g_{i - \onehalf, j - \onehalf, k}
+            \right]
+            +
+            f_{i - 1, j, k}
+            \left[
+                - g_{i - \onehalf, j - \onehalf, k}
+                + g_{i - \onehalf, j + \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i - 1, j + 1, k}
+            \left[
+                - g_{i - \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i, j - 1, k}
+            \left[
+                g_{i - \onehalf, j - \onehalf, k}
+                - g_{i + \onehalf, j - \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left\{
+                - g_{i - \onehalf, j - \onehalf, k}
+                + g_{i - \onehalf, j + \onehalf, k}
+                + g_{i + \onehalf, j - \onehalf, k}
+                - g_{i + \onehalf, j + \onehalf, k}
+            \right\}
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1, k}
+            \left[
+                - g_{i - \onehalf, j + \onehalf, k}
+                + g_{i + \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i + 1, j - 1, k}
+            \left[
+                - g_{i + \onehalf, j - \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j, k}
+            \left[
+                g_{i + \onehalf, j - \onehalf, k}
+                - g_{i + \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i + 1, j + 1, k}
+            \left[
+                g_{i + \onehalf, j + \onehalf, k}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \
+        \left.
+            \frac
+                {\partial}
+                {\partial x}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial \xi}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {
+                4
+                \Delta x
+                \Delta \xi_{k}
+                \Delta \xi_{k - \onehalf}
+                \Delta \xi_{k + \onehalf}
+            }
+        \times
+        \\ &
+        \times
+        \left\{
+            f_{i - 1, j, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+            \right]
+            +
+            f_{i - 1, j, k}
+            \left[
+                -\Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i - 1, j, k + 1}
+            \left[
+                - \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+            \right]
+            +
+            f_{i, j, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+            f_{i + 1, j, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j, k}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+            f_{i + 1, j, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left.
+            \frac
+                {\partial}
+                {\partial y}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial x}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {4 \Delta x \Delta y}
+        \left\{
+            f_{i - 1, j - 1, k}
+            \left[
+                g_{i - \onehalf, j - \onehalf, k}
+            \right]
+            +
+            f_{i - 1, j, k}
+            \left[
+                g_{i - \onehalf, j - \onehalf, k}
+                -
+                g_{i - \onehalf, j + \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i - 1, j + 1, k}
+            \left[
+                -
+                g_{i - \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i, j - 1, k}
+            \left[
+                -
+                g_{i - \onehalf, j - \onehalf, k}
+                +
+                g_{i + \onehalf, j - \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left\{
+                - g_{i - \onehalf, j - \onehalf, k}
+                + g_{i - \onehalf, j + \onehalf, k}
+                + g_{i + \onehalf, j - \onehalf, k}
+                - g_{i + \onehalf, j + \onehalf, k}
+            \right\}
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1, k}
+            \left[
+                g_{i - \onehalf, j + \onehalf, k}
+                -
+                g_{i + \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i + 1, j - 1, k}
+            \left[
+                - g_{i + \onehalf, j - \onehalf, k}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j, k}
+            \left[
+                -
+                g_{i + \onehalf, j - \onehalf, k}
+                +
+                g_{i + \onehalf, j + \onehalf, k}
+            \right]
+            +
+            f_{i + 1, j + 1, k}
+            \left[
+                g_{i + \onehalf, j + \onehalf, k}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \left.
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+    \right._{i, j, k}
+    =
+    \frac
+        {1}
+        {\Delta y^2}
+    \left\{
+        f_{i, j - 1, k}
+        \left[
+              g_{i, j - \onehalf, k}
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            - g_{i, j - \onehalf, k}
+            - g_{i, j + \onehalf, k}
+        \right]
+        +
+        f_{i, j + 1, k}
+        \left[
+              g_{i, j + \onehalf, k}
+        \right]
+    \right\}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \
+        \left.
+            \frac
+                {\partial}
+                {\partial y}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial \xi}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {
+                4
+                \Delta y
+                \Delta \xi_{k}
+                \Delta \xi_{k - \onehalf}
+                \Delta \xi_{k + \onehalf}
+            }
+        \times
+        \\ &
+        \times
+        \left\{
+            f_{i, j - 1, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+            \right]
+            +
+            f_{i, j - 1, k}
+            \left[
+                -\Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j - 1, k + 1}
+            \left[
+                - \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+            \right]
+            +
+            f_{i, j, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+            +
+            f_{i, j + 1, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1, k}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+            +
+            f_{i, j + 1, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left.
+            \frac
+                {\partial}
+                {\partial \xi}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial x}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {
+                4 
+                \Delta x
+                \Delta \xi_{k}
+                \Delta \xi_{k - \onehalf}
+                \Delta \xi_{k + \onehalf}
+            }
+        \times
+        \left\{
+            f_{i - 1, j, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i - 1, j, k}
+            \left[
+                -
+                4 \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                g_{i - \onehalf, j, k}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i - 1, j, k + 1}
+            \left[
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+            \right]
+            +
+            f_{i, j, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left[
+                4
+                \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                \left(
+                    g_{i - \onehalf, j, k}
+                    -
+                    g_{i + \onehalf, j, k}
+                \right)
+                -
+            \right.
+        \right.
+        \\ & \qquad
+        \left.
+            \left.
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i - \onehalf, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i - \onehalf, j, k + \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+            f_{i + 1, j, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j, k}
+            \left[
+                4
+                \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                g_{i + \onehalf, j, k}
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i + \onehalf, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i + 1, j, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i + \onehalf, j, k + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left.
+            \frac
+                {\partial}
+                {\partial \xi}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial y}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {
+                4 
+                \Delta y
+                \Delta \xi_{k}
+                \Delta \xi_{k - \onehalf}
+                \Delta \xi_{k + \onehalf}
+            }
+        \times
+        \left\{
+            f_{i, j - 1, k - 1}
+            \left[
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j - 1, k}
+            \left[
+                -
+                4 \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                g_{i, j - \onehalf, k}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j  - \onehalf, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j - 1, k + 1}
+            \left[
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+            \right]
+            +
+            f_{i, j, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j  - \onehalf, k - \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left[
+                4
+                \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                \left(
+                    g_{i, j - \onehalf, k}
+                    -
+                    g_{i, j  + \onehalf, k}
+                \right)
+                -
+            \right.
+        \right.
+        \\ & \qquad
+        \left.
+            \left.
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+                +
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j - \onehalf, k + \onehalf}
+                -
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j  + \onehalf, k + \onehalf}
+            \right]
+            +
+            f_{i, j + 1, k - 1}
+            \left[
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j  + \onehalf, k - \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1, k}
+            \left[
+                4
+                \Delta \xi_{k}
+                \left(
+                    \Delta \xi_{k + \onehalf}
+                    -
+                    \Delta \xi_{k - \onehalf}
+                \right)
+                g_{i, j + \onehalf, k}
+                -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j + 1, k + 1}
+            \left[
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left.
+            \frac
+                {\partial}
+                {\partial \xi}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial \xi}
+            \right)
+        \right._{i, j, k}
+        = &
+        \frac
+            {1}
+            {
+                \Delta \xi^2_{k}
+                \Delta \xi_{k - \onehalf}
+                \Delta \xi_{k + \onehalf}
+            }
+        \left\{
+            f_{i, j, k - 1}
+            \left[
+                \Delta \xi^2_{k+\onehalf}
+                g_{i, j, k-\onehalf}
+                +
+                \frac
+                    {
+                        \Delta \xi_{k + \onehalf}
+                        \left(
+                            \Delta \xi_{k - \onehalf}
+                            -
+                            \Delta \xi_{k + \onehalf}
+                        \right)
+                    }
+                    {2}
+                g_{i, j, k+\onehalf}
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k}
+            \left[
+                \Delta \xi_{k}
+                \left(
+                    \left(
+                        -
+                        2
+                        \Delta \xi_{k-\onehalf}
+                        +
+                        \Delta \xi_{k+\onehalf}
+                    \right)
+                    g_{i, j, k-\onehalf}
+                    +
+                    \left(
+                        -
+                        2
+                        \Delta \xi_{k+\onehalf}
+                        +
+                        \Delta \xi_{k-\onehalf}
+                    \right)
+                    g_{i, j, k+\onehalf}
+                \right)
+            \right]
+            +
+        \right.
+        \\ &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                \frac
+                    {
+                        \Delta \xi_{k - \onehalf}
+                        \left(
+                            \Delta \xi_{k + \onehalf}
+                            -
+                            \Delta \xi_{k - \onehalf}
+                        \right)
+                    }
+                    {2}
+                g_{i, j, k - \onehalf}
+                +
+                \Delta \xi^2_{k - \onehalf}
+                g_{i, j, k + \onehalf}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
+Для удобства вывода вычислительных схем и повышения
+читаемости переобозначим коэффициенты при узловых значениях
+функции $f$.
+
+2D:
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+        =
+        f_{i-1,j}
+        \left[
+            \alpha_{x} \left(-1\right)
+        \right]
+        +
+        f_{i,j}
+        \left[
+            \alpha_{x} \left(0\right)
+        \right]
+        +
+        f_{i+1,j}
+        \left[
+            \alpha_{x} \left(1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+        &
+        =
+        f_{i-1, j-1}
+        \left[
+            \beta_{x,y} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1,j}
+        \left[
+            \beta_{x,y} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j+1}
+        \left[
+            \beta_{x,y} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j-1}
+        \left[
+            \beta_{x,y} \left(0, -1\right)
+        \right]
+        +
+        f_{i, j}
+        \left[
+            \beta_{x,y} \left(0, 0\right)
+        \right]
+        +
+        f_{i, j+1}
+        \left[
+            \beta_{x,y} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j-1}
+        \left[
+            \beta_{x,y} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j}
+        \left[
+            \beta_{x,y} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j+1}
+        \left[
+            \beta_{x,y} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+        &
+        =
+        f_{i-1, j-1}
+        \left[
+            \beta_{y,x} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1,j}
+        \left[
+            \beta_{y,x} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j+1}
+        \left[
+            \beta_{y,x} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j-1}
+        \left[
+            \beta_{y,x} \left(0, -1\right)
+        \right]
+        +
+        f_{i, j}
+        \left[
+            \beta_{y,x} \left(0, 0\right)
+        \right]
+        +
+        f_{i, j+1}
+        \left[
+            \beta_{y,x} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j-1}
+        \left[
+            \beta_{y,x} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j}
+        \left[
+            \beta_{y,x} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j+1}
+        \left[
+            \beta_{y,x} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+        =
+        f_{i, j-1}
+        \left[
+            \alpha_y \left(-1\right)
+        \right]
+        +
+        f_{i, j}
+        \left[
+            \alpha_y \left(0\right)
+        \right]
+        +
+        f_{i, j+1}
+        \left[
+            \alpha_y \left(1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+Для введенных коэффициентов можно заметить некоторые свойства
+
+\begin{equation*}
+    \begin{cases}
+        \beta_{x,y} \left(p, q\right)
+        =
+        -
+        \beta_{y,x} \left(p,q\right),
+            \quad
+            \left|p\right|
+            \ne
+            \left|q\right|
+        \\
+        \beta_{x,y} \left(p, q\right)
+        =
+        \beta_{y,x} \left(p,q\right),
+            \quad
+            \left|p\right|
+            =
+            \left|q\right|
+    \end{cases}
+\end{equation*}
+
+Таким образом можно кратко записать схему для суммы.
+
+\begin{equation*}
+    \begin{split}
+        \left[
+            \frac
+                {\partial}
+                {\partial x}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial y}
+            \right)
+        \right.
+            &
+        \left.
+            +
+            \frac
+                {\partial}
+                {\partial y}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial x}
+            \right)
+        \right]
+        =
+        f_{i-1, j-1}
+        \left[
+            2
+            \beta_{x,y} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j+1}
+        \left[
+            2
+            \beta_{x,y} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i,f}
+        \left[
+            2
+            \beta_{x,y} \left(0, 0\right)
+        \right]
+        +
+        f_{i+1, j-1}
+        \left[
+            2
+            \beta_{x,y} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j+1}
+        \left[
+            2
+            \beta_{x,y} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+3D:
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+        =
+        f_{i-1, j, k}
+        \left[
+            \alpha_{x} \left(-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \alpha_{x} \left(0\right)
+        \right]
+        +
+        f_{i+1, j, k}
+        \left[
+            \alpha_{x} \left(1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+        &
+        =
+        f_{i-1, j-1, k}
+        \left[
+            \beta_{x,y} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j, k}
+        \left[
+            \beta_{x,y} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j+1, k}
+        \left[
+            \beta_{x,y} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j-1, k}
+        \left[
+            \beta_{x,y} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \beta_{x,y} \left(0,0\right)
+        \right]
+        +
+        f_{i, j+1, k}
+        \left[
+            \beta_{x,y} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j-1, k}
+        \left[
+            \beta_{x,y} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j, k}
+        \left[
+            \beta_{x,y} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j+1, k}
+        \left[
+            \beta_{x,y} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        &
+        =
+        f_{i-1, j, k-1}
+        \left[
+            \beta_{x, \xi} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j, k}
+        \left[
+            \beta_{x, \xi} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j, k+1}
+        \left[
+            \beta_{x, \xi} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j, k-1}
+        \left[
+            \beta_{x, \xi} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \beta_{x, \xi} \left(0,0\right)
+        \right]
+        +
+        f_{i, j, k+1}
+        \left[
+            \beta_{x, \xi} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j, k-1}
+        \left[
+            \beta_{x, \xi} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j, k}
+        \left[
+            \beta_{x, \xi} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j, k+1}
+        \left[
+            \beta_{x, \xi} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+        &
+        =
+        f_{i-1, j-1, k}
+        \left[
+            \beta_{y, x} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j, k}
+        \left[
+            \beta_{y, x} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j+1, k}
+        \left[
+            \beta_{y, x} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j-1, k}
+        \left[
+            \beta_{y, x} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \beta_{y, x} \left(0,0\right)
+        \right]
+        +
+        f_{i, j+1, k}
+        \left[
+            \beta_{y, x} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j-1, k}
+        \left[
+            \beta_{y, x} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j, k}
+        \left[
+            \beta_{y, x} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j+1, k}
+        \left[
+            \beta_{y, x} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+        =
+        f_{i, j-1, k}
+        \left[
+            \alpha_{y} \left(-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \alpha_{y} \left(0\right)
+        \right]
+        +
+        f_{i, j+1, k}
+        \left[
+            \alpha_{y} \left(1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial y}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        &
+        =
+        f_{i, j-1, k-1}
+        \left[
+            \beta_{y, \xi} \left(-1, -1\right)
+        \right]
+        +
+        f_{i, j-1, k}
+        \left[
+            \beta_{y, \xi} \left(-1, 0\right)
+        \right]
+        +
+        f_{i, j-1, k+1}
+        \left[
+            \beta_{y, \xi} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j, k-1}
+        \left[
+            \beta_{y, \xi} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \beta_{y, \xi} \left(0,0\right)
+        \right]
+        +
+        f_{i, j, k+1}
+        \left[
+            \beta_{y, \xi} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j+1, k-1}
+        \left[
+            \beta_{y, \xi} \left(1, -1\right)
+        \right]
+        +
+        f_{i, j+1, k}
+        \left[
+            \beta_{y, \xi} \left(1, 0\right)
+        \right]
+        +
+        f_{i, j+1, k+1}
+        \left[
+            \beta_{y, \xi} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial \xi}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial x}
+        \right)
+        &
+        =
+        f_{i-1, j, k-1}
+        \left[
+            \beta_{\xi, x} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j, k}
+        \left[
+            \gamma_{\xi, x} \left(-1\right)
+            \beta_{\xi, x} \left(-1, 0\right)
+        \right]
+        +
+        f_{i-1, j, k+1}
+        \left[
+            \beta_{\xi, x} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j, k-1}
+        \left[
+            \beta_{\xi, x} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \gamma_{\xi, x} \left(0\right)
+            \beta_{\xi, x} \left(0,0\right)
+        \right]
+        +
+        f_{i, j, k+1}
+        \left[
+            \beta_{\xi, x} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j, k-1}
+        \left[
+            \beta_{\xi, x} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j, k}
+        \left[
+            \gamma_{\xi, x} \left(1\right)
+            \beta_{\xi, x} \left(1, 0\right)
+        \right]
+        +
+        f_{i+1, j, k+1}
+        \left[
+            \beta_{\xi, x} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial \xi}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial y}
+        \right)
+        &
+        =
+        f_{i, j-1, k-1}
+        \left[
+            \beta_{\xi, y} \left(-1, -1\right)
+        \right]
+        +
+        f_{i, j-1, k}
+        \left[
+            \gamma_{\xi, y} \left(-1\right)
+            \beta_{\xi, y} \left(-1, 0\right)
+        \right]
+        +
+        f_{i, j-1, k+1}
+        \left[
+            \beta_{\xi, y} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j, k-1}
+        \left[
+            \beta_{\xi, y} \left(0,-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \gamma_{\xi, y} \left(0\right)
+            \beta_{\xi, y} \left(0,0\right)
+        \right]
+        +
+        f_{i, j, k+1}
+        \left[
+            \beta_{\xi, y} \left(0, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j+1, k-1}
+        \left[
+            \beta_{\xi, y} \left(1, -1\right)
+        \right]
+        +
+        f_{i, j+1, k}
+        \left[
+            \gamma_{\xi, y} \left(1\right)
+            \beta_{\xi, y} \left(1, 0\right)
+        \right]
+        +
+        f_{i, j+1, k+1}
+        \left[
+            \beta_{\xi, y} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial}
+            {\partial \xi}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        =
+        f_{i, j, k-1}
+        \left[
+            \alpha_{\xi} \left(-1\right)
+        \right]
+        +
+        f_{i, j, k}
+        \left[
+            \alpha_{\xi} \left(0\right)
+        \right]
+        +
+        f_{i, j, k+1}
+        \left[
+            \alpha_{\xi} \left(1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+Аналогично предыдущим выводам, приведем схемы для сумм
+операторов.
+
+\begin{equation*}
+    \begin{split}
+        \left[
+            \frac
+                {\partial}
+                {\partial x}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial y}
+            \right)
+        \right.
+            &
+        \left.
+            +
+            \frac
+                {\partial}
+                {\partial y}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial x}
+            \right)
+        \right]
+        =
+        f_{i-1, j-1, k}
+        \left[
+            2
+            \beta_{x,y} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j+1, k}
+        \left[
+            2
+            \beta_{x,y} \left(-1, 1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, f, k}
+        \left[
+            2
+            \beta_{x,y} \left(0, 0\right)
+        \right]
+        +
+        f_{i+1, j-1, k}
+        \left[
+            2
+            \beta_{x,y} \left(1, -1\right)
+        \right]
+        +
+        f_{i+1, j+1, k}
+        \left[
+            2
+            \beta_{x,y} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left[
+            \frac
+                {\partial}
+                {\partial x}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial \xi}
+            \right)
+        \right.
+            &
+        \left.
+            +
+            \frac
+                {\partial}
+                {\partial \xi}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial x}
+            \right)
+        \right]
+        =
+        f_{i-1, j, k-1}
+        \left[
+            2
+            \beta_{x, \xi} \left(-1, -1\right)
+        \right]
+        +
+        f_{i-1, j, k}
+        \left[
+            \gamma_{\xi, x} \left(-1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i-1, j, k+1}
+        \left[
+            2
+            \beta_{x, \xi} \left(-1, 1\right)
+        \right]
+        +
+        f_{i, f, k}
+        \left[
+            \gamma_{\xi, x} \left(0\right)
+            +
+            2
+            \beta_{x, \xi} \left(0, 0\right)
+        \right]
+        +
+        f_{i+1, j, k-1}
+        \left[
+            2
+            \beta_{x, \xi} \left(1, -1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i+1, j, k}
+        \left[
+            \gamma_{\xi, x} \left(1\right)
+        \right]
+        +
+        f_{i+1, j, k+1}
+        \left[
+            2
+            \beta_{x, \xi} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \left[
+            \frac
+                {\partial}
+                {\partial y}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial \xi}
+            \right)
+        \right.&
+        \left.
+            +
+            \frac
+                {\partial}
+                {\partial \xi}
+            \left(
+                g
+                \frac
+                    {\partial f}
+                    {\partial y}
+            \right)
+        \right]
+        =
+        f_{i, j-1, k-1}
+        \left[
+            2
+            \beta_{y, \xi} \left(-1, -1\right)
+        \right]
+        +
+        f_{i, j-1, k}
+        \left[
+            \gamma_{\xi, y} \left(-1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j-1, k+1}
+        \left[
+            2
+            \beta_{y, \xi} \left(-1, 1\right)
+        \right]
+        +
+        f_{i, f, k}
+        \left[
+            \gamma_{\xi, y} \left(0\right)
+            +
+            2
+            \beta_{y, \xi} \left(0, 0\right)
+        \right]
+        +
+        f_{i, j+1, k-1}
+        \left[
+            2
+            \beta_{y, \xi} \left(1, -1\right)
+        \right]
+        +
+        \\
+        &
+        +
+        f_{i, j+1, k}
+        \left[
+            \gamma_{\xi, y} \left(1\right)
+        \right]
+        +
+        f_{i, j+1, k+1}
+        \left[
+            2
+            \beta_{y, \xi} \left(1, 1\right)
+        \right]
+    \end{split}
+\end{equation*}

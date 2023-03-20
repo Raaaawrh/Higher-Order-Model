@@ -1,0 +1,1278 @@
+\section*{Преобразование координат}
+
+Для моделирования ледников обычно производят преобразование
+по вертикальной координате, скалируя область ледника на
+единичную высоту.
+Для этого используется координатное отображение
+\begin{equation*}
+    \left(
+        x, y, z, t
+    \right)
+    \mapsto
+    \left(
+        x', y', \xi, t
+    \right)
+\end{equation*}
+
+Примером такого отображения может быть 
+\begin{equation*}
+    \xi
+    =
+    \frac
+        {z-b}
+        {s-b}
+    =
+    \frac
+        {z-b}
+        {H}
+\end{equation*}
+
+Тогда нижняя граница ледника будет всегда находится на 
+плоскости $\xi = 0$, а верняя граница на плоскости $\xi = 1$.
+
+Рассмотрим, как происходит преобразование некоторой достаточно
+гладкой функции $f=f(x,y,z,t)$ при таком координатном отображении.
+
+С небольшой погрешностью можно утверждать, что
+\begin{equation*}
+    \begin{cases}
+        x \approx x'
+        \\
+        y \approx y'
+        \\
+        t \approx t'
+    \end{cases}
+\end{equation*}
+
+Перед тем, как выводить вид функций в новых координатах
+приведем вспомогательные производные.
+\begin{equation*}
+    \begin{split}
+        a_{x}
+        =
+        \frac
+            {\partial \xi}
+            {\partial x}
+        & =
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {z-b}
+                {H}
+        \right)
+        =
+        \frac
+            {1}
+            {H}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            z - b
+        \right)
+        +
+        \left(
+            z - b
+        \right)
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {1}
+                {H}
+        \right)
+        =
+        -
+        \frac
+            {1}
+            {H}
+        \frac
+            {\partial b}
+            {\partial x}
+        +
+        \left(
+            z - b
+        \right)
+        \cdot
+        \frac
+            {-1}
+            {H}
+        \frac
+            {\partial H}
+            {\partial x}
+        =
+        \\ &
+        =
+        \frac
+            {-1}
+            {H}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \frac
+                {z-b}
+                {H}
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        =
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        \approx
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x'}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x'}
+        \right)
+    \end{split}
+\end{equation*}
+
+Аналогично
+\begin{equation*}
+    a_{y}
+    =
+    \frac
+        {\partial \xi}
+        {\partial y}
+    =
+    -
+    \frac
+        {1}
+        {H}
+    \left(
+        \frac
+            {\partial b}
+            {\partial y}
+        +
+        \xi
+        \frac
+            {\partial H}
+            {\partial y}
+    \right)
+    \approx
+    -
+    \frac
+        {1}
+        {H}
+    \left(
+        \frac
+            {\partial b}
+            {\partial y'}
+        +
+        \xi
+        \frac
+            {\partial H}
+            {\partial y'}
+    \right)
+\end{equation*}
+
+\begin{equation*}
+    a_{z}
+    =
+    \frac
+        {\partial \xi}
+        {\partial z}
+    =
+    \frac
+        {\partial}
+        {\partial z}
+    \left(
+        \frac
+            {z-b}
+            {H}
+    \right)
+    =
+    \frac
+        {1}
+        {H}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        b_{x}
+        =
+        \frac
+            {\partial a_{x}}
+            {\partial x}
+        &
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left[
+            -
+            \frac
+                {1}
+                {H}
+            \left(
+                \frac
+                    {\partial b}
+                    {\partial x}
+                +
+                \xi
+                \frac
+                    {\partial H}
+                    {\partial x}
+            \right)
+        \right]
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            -
+            \frac
+                {1}
+                {H}
+        \right)
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        +
+        \left(
+            -
+            \frac
+                {1}
+                {H}
+        \right)
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        =
+        \\ &
+        =
+        \frac
+            {1}
+            {H^2}
+        \frac
+            {\partial H}
+            {\partial x}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x^2}
+            +
+            \frac
+                {\partial \xi}
+                {\partial x}
+            \frac
+                {\partial H}
+                {\partial x}
+            +\xi
+            \frac
+                {\partial^2 H}
+                {\partial x^2}
+        \right)
+        =
+        \\
+        &
+        =
+        \frac
+            {1}
+            {H^2}
+        \frac
+            {\partial H}
+            {\partial x}
+        \left(
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x^2}
+            +
+            a_{x}
+            \frac
+                {\partial b}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x^2}
+        \right)
+        =
+        \\
+        &
+        =
+        -
+        \frac
+            {1}
+            {H}
+        \frac
+            {\partial H}
+            {\partial x}
+        a_{x}
+        -
+        \frac
+            {1}
+            {H}
+        a_{x}
+        \frac
+            {1}
+            {H}
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x^2}
+            +\xi
+            \frac
+                {\partial^2 H}
+                {\partial x^2}
+        \right)
+        =
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x^2}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x^2}
+            +
+            2
+            a_{x}
+            \frac
+                {\partial H}
+                {\partial x}
+        \right)
+        \approx
+        \\
+        &
+        \approx
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x'^2}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x'^2}
+            +
+            2
+            a_{x}
+            \frac
+                {\partial H}
+                {\partial x'}
+        \right)
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    b_{y}
+    =
+    \frac
+        {\partial a_{y}}
+        {\partial y}
+    =
+    -
+    \frac
+        {1}
+        {H}
+    \left(
+        \frac
+            {\partial^2 b}
+            {\partial y^2}
+        +
+        \xi
+        \frac
+            {\partial^2 H}
+            {\partial y^2}
+        +
+        2
+        a_{y}
+        \frac
+            {\partial H}
+            {\partial y}
+    \right)
+    \approx
+    -
+    \frac
+        {1}
+        {H}
+    \left(
+        \frac
+            {\partial^2 b}
+            {\partial y'^2}
+        +
+        \xi
+        \frac
+            {\partial^2 H}
+            {\partial y'^2}
+        +
+        2
+        a_{y}
+        \frac
+            {\partial H}
+            {\partial y'}
+    \right)
+\end{equation*}
+
+\begin{equation*}
+    b_{z}
+    =
+    \frac
+        {\partial a_{z}}
+        {\partial z}
+    =
+    \frac
+        {\partial}
+        {\partial z}
+    \left(
+        \frac
+            {1}
+            {H}
+    \right)
+    =
+    0
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        c_{xy}
+        =
+        \frac
+            {\partial a_{y}}
+            {\partial x}
+        &
+        =
+        c_{yx}
+        =
+        \frac
+            {\partial a_{x}}
+            {\partial y}
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left[
+            -
+            \frac
+                {1}
+                {H}
+            \left(
+                \frac
+                    {\partial b}
+                    {\partial y}
+                +
+                \xi
+                \frac
+                    {\partial H}
+                    {\partial y}
+            \right)
+        \right]
+        =
+        \\
+        &
+        =
+        -
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {1}
+                {H}
+        \right)
+        \left(
+            \frac
+                {\partial b}
+                {\partial y}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial y}
+        \right)
+        -
+        \frac
+            {1}
+            {H}
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {\partial b}
+                {\partial y}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial y}
+        \right)
+        =
+        \\
+        &
+        =
+        \frac
+            {1}
+            {H^2}
+        \frac
+            {\partial H}
+            {\partial x}
+        \left(
+            \frac
+                {\partial b}
+                {\partial y}
+            +
+            \xi
+            \frac
+                {\partial H}
+                {\partial y}
+        \right)
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x \partial y}
+            +
+            \frac
+                {\partial \xi}
+                {\partial x}
+            \frac
+                {\partial H}
+                {\partial y}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x \partial y}
+        \right)
+        =
+        \\
+        &
+        =
+        -
+        \frac
+            {1}
+            {H}
+        a_{y}
+        \frac
+            {\partial H}
+            {\partial x}
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x \partial y}
+            +
+            a_{x}
+            \frac
+                {\partial H}
+                {\partial y}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x \partial y}
+        \right)
+        =
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x \partial y}
+            +
+            a_{x}
+            \frac
+                {\partial H}
+                {\partial y}
+            +
+            a_{y}
+            \frac
+                {\partial H}
+                {\partial x}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x \partial y}
+        \right)
+        \approx
+        \\
+        &
+        \approx
+        -
+        \frac
+            {1}
+            {H}
+        \left(
+            \frac
+                {\partial^2 b}
+                {\partial x' \partial y'}
+            +
+            a_{x}
+            \frac
+                {\partial H}
+                {\partial y'}
+            +
+            a_{y}
+            \frac
+                {\partial H}
+                {\partial x'}
+            +
+            \xi
+            \frac
+                {\partial^2 H}
+                {\partial x' \partial y'}
+        \right)
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    c_{xz}
+    =
+    \frac
+        {\partial a_z}
+        {\partial x}
+    =
+    c_{zx}
+    =
+    \frac
+        {\partial a_x}
+        {\partial z}
+    =
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        \frac
+            {1}
+            {H}
+    \right)
+    =
+    -
+    \frac
+        {1}
+        {H^2}
+    \frac
+        {\partial H}
+        {\partial x}
+    \approx
+    -
+    \frac
+        {1}
+        {H^2}
+    \frac
+        {\partial H}
+        {\partial x'}
+\end{equation*}
+
+\begin{equation*}
+    c_{yz}
+    =
+    \frac
+        {\partial a_z}
+        {\partial y}
+    =
+    c_{zy}
+    =
+    \frac
+        {\partial a_y}
+        {\partial z}
+    =
+    -
+    \frac
+        {1}
+        {H^2}
+    \frac
+        {\partial H}
+        {\partial y}
+    \approx
+    -
+    \frac
+        {1}
+        {H^2}
+    \frac
+        {\partial H}
+        {\partial y'}
+\end{equation*}
+
+Перейдем к первым производным функции $f$
+
+\begin{equation*}
+    \frac
+        {\partial f}
+        {\partial x}
+    =
+    \frac
+        {\partial f}
+        {\partial x'}
+    \frac
+        {\partial x'}
+        {\partial x}
+    +
+    \frac
+        {\partial f}
+        {\partial y'}
+    \frac
+        {\partial y'}
+        {\partial x}
+    +
+    \frac
+        {\partial f}
+        {\partial \xi}
+    \frac
+        {\partial \xi}
+        {\partial x}
+    +
+    \frac
+        {\partial f}
+        {\partial t'}
+    \frac
+        {\partial t'}
+        {\partial x}
+    \approx
+    \frac
+        {\partial f}
+        {\partial x'}
+    +
+    a_{x}
+    \frac
+        {\partial f}
+        {\partial \xi}
+\end{equation*}
+\begin{equation*}
+    \frac
+        {\partial f}
+        {\partial y}
+    \approx
+    \frac
+        {\partial f}
+        {\partial y'}
+    +
+    a_{y}
+    \frac
+        {\partial f}
+        {\partial \xi}
+\end{equation*}
+
+\begin{equation*}
+    \frac
+        {\partial f}
+        {\partial z}
+    =
+    \frac
+        {\partial f}
+        {\partial x'}
+    \frac
+        {\partial x'}
+        {\partial z}
+    +
+    \frac
+        {\partial f}
+        {\partial y'}
+    \frac
+        {\partial y'}
+        {\partial z}
+    +
+    \frac
+        {\partial f}
+        {\partial \xi}
+    \frac
+        {\partial \xi}
+        {\partial z}
+    +
+    \frac
+        {\partial f}
+        {\partial t'}
+    \frac
+        {\partial t'}
+        {\partial z}
+    \approx
+    a_{z}
+    \frac
+        {\partial f}
+        {\partial \xi}
+\end{equation*}
+
+Далее нужно рассмотреть вторые производные
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial^2 f}
+            {\partial x^2}
+        &
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {\partial f}
+                {\partial x'}
+            +
+            a_{x}
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial x'}
+        +
+        \frac
+            {\partial}
+            {\partial \xi}
+        \frac
+            {\partial f}
+            {\partial x'}
+        \frac
+            {\partial \xi}
+            {\partial x}
+        +
+        \frac
+            {\partial a_{x}}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_{x}
+        \frac
+            {\partial}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_{x}
+        \frac
+            {\partial}
+            {\partial \xi}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        \frac
+            {\partial \xi}
+            {\partial x}
+        \approx
+        \\
+        &
+        \approx
+        \frac
+            {\partial^2 f}
+            {\partial x'^2}
+        +
+        2
+        a_{x}
+        \frac
+            {\partial^2 f}
+            {\partial x' \partial \xi}
+        +
+        a^2_{x}
+        \frac
+            {\partial^2 f}
+            {\partial \xi^2}
+        +
+        b_{x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \frac
+        {\partial^2 f}
+        {\partial y^2}
+    \approx
+    \frac
+        {\partial^2 f}
+        {\partial y'^2}
+    +   
+    2
+    a_{y}
+    \frac
+        {\partial^2 f}
+        {\partial y' \partial \xi}
+    +
+    a^2_{y}
+    \frac
+        {\partial^2 f}
+        {\partial \xi^2}
+    +
+    b_{y}
+    \frac
+        {\partial f}
+        {\partial \xi}
+\end{equation*}
+
+\begin{equation*}
+    \frac
+        {\partial^2 f}
+        {\partial z^2}
+    =
+    \frac
+        {\partial}
+        {\partial z}
+    \left(
+        a_{z}
+        \frac
+            {\partial f}
+            {\partial \xi}
+    \right)
+    =
+    a_{z}
+    \frac
+        {\partial}
+        {\partial z}
+    \frac
+        {\partial f}
+        {\partial \xi}
+    \approx
+    a^2_{z}
+    \frac
+        {\partial^2 f}
+        {\partial \xi^2}
+\end{equation*}
+
+Включая смешанные частные производные
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial^2 f}
+            {\partial x \partial y}
+        =
+        \frac
+            {\partial^2 f}
+            {\partial y \partial x}
+        &
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            \frac
+                {\partial f}
+                {\partial y'}
+            +
+            a_{y}
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial y'}
+        +
+        \frac
+            {\partial}
+            {\partial \xi}
+        \frac
+            {\partial f}
+            {\partial y'}
+        \frac
+            {\partial \xi}
+            {\partial x}
+        +
+        \frac
+            {\partial a_{y}}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_{y}
+        \frac
+            {\partial }
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        =
+        \\
+        &
+        =
+        \frac
+            {\partial}
+            {\partial x'}
+        \frac
+            {\partial f}
+            {\partial y'}
+        \frac
+            {\partial x'}
+            {\partial x}
+        +
+        a_x
+        \frac
+            {\partial^2 f}
+            {\partial y' \partial \xi}
+        +
+        c_{xy}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_y
+        \frac
+            {\partial}
+            {\partial x'}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        \frac
+            {\partial x'}
+            {\partial x}
+        +
+        a_y
+        \frac
+            {\partial}
+            {\partial \xi}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        \frac
+            {\partial \xi}
+            {\partial x}
+        \approx
+        \\
+        &
+        \approx
+        \frac
+            {\partial^2 f}
+            {\partial x' \partial y'}
+        +
+        a_x
+        \frac
+            {\partial^2 f}
+            {\partial y' \partial \xi}
+        +
+        a_y
+        \frac
+            {\partial^2 f}
+            {\partial x' \partial \xi}
+        +
+        a_x
+        a_y
+        \frac
+            {\partial^2 f}
+            {\partial \xi^2}
+        +
+        c_{xy}
+        \frac
+            {\partial f}
+            {\partial \xi}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+            {\partial^2 f}
+            {\partial x \partial z}
+        =
+        \frac
+            {\partial^2 f}
+            {\partial z \partial x}
+        &
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial z}
+        =
+        \frac
+            {\partial}
+            {\partial x}
+        \left(
+            a_z
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)
+        =
+        \frac
+            {\partial a_z}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_z
+        \frac
+            {\partial}
+            {\partial x}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        =
+        \\
+        &
+        =
+        c_{xz}
+        \frac
+            {\partial f}
+            {\partial \xi}
+        +
+        a_z
+        \left(
+            \frac
+                {\partial}
+                {\partial x'}
+            \frac
+                {\partial f}
+                {\partial \xi}
+            \frac
+                {\partial x'}
+                {\partial x}
+            +
+            \frac
+                {\partial}
+                {\partial \xi}
+            \frac
+                {\partial f}
+                {\partial \xi}
+            \frac
+                {\partial \xi}
+                {\partial x}
+        \right)
+        \approx
+        a_z
+        \frac
+            {\partial^2 f}
+            {\partial x' \partial \xi}
+        +
+        a_x
+        a_z
+        \frac
+            {\partial^2 f}
+            {\partial \xi^2}
+        +
+        c_{xz}
+        \frac
+            {\partial f}
+            {\partial \xi}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \frac
+        {\partial^2 f}
+        {\partial y \partial z}
+    =
+    \frac
+        {\partial^2 f}
+        {\partial z \partial y}
+    \approx
+        a_z
+        \frac
+            {\partial^2 f}
+            {\partial y' \partial \xi}
+        +
+        a_y
+        a_z
+        \frac
+            {\partial^2 f}
+            {\partial \xi^2}
+        +
+        c_{yz}
+        \frac
+            {\partial f}
+            {\partial \xi}
+\end{equation*}

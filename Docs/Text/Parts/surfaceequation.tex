@@ -1,0 +1,172 @@
+\section*{Уравнение поверхности}
+
+Найти положение поверхности $s(x, y, t)$ можно
+найти из следующего уравнения.
+
+\begin{equation*}
+    \nabla
+    \cdot
+    H
+    \overline{v_{H}}
+    =
+    \dot{M}_s
+    -
+    \dot{M}_b
+    -
+    \frac
+        {\partial H}
+        {\partial t}
+\end{equation*}
+
+Введем матрицу диффузивности
+\begin{equation*}
+    D
+    =
+    \begin{pmatrix}
+        D_{x}
+        &
+        0
+    \\
+        0
+        &
+        D_{y}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \overline{u}
+        H
+        \left(
+            \frac
+                {\partial s}
+                {\partial x}
+        \right)^{-1}
+        &
+        0
+    \\
+        0
+        &
+        \overline{v}
+        H
+        \left(
+            \frac
+                {\partial s}
+                {\partial y}
+        \right)^{-1}
+    \end{pmatrix}
+\end{equation*}
+
+Используя диффузивность, преобразуем левую часть уравнения
+
+\begin{equation*}
+    \nabla
+    \cdot
+    H
+    \overline{v}_H
+    =
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        H
+        \overline{u}
+    \right)
+    +
+    \frac
+        {\partial}
+        {\partial y}
+    \left(
+        H
+        \overline{v}
+    \right)
+    =
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        D_{x}
+        \frac
+            {\partial s}
+            {\partial x}
+    \right)
+    +
+    \frac
+        {\partial}
+        {\partial y}
+    \left(
+        D_{y}
+        \frac
+            {\partial s}
+            {\partial y}
+    \right)
+\end{equation*}
+
+В итоге получили следующий вид, используя еще $H=s-b$
+
+\begin{equation*}
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        D_{x}
+        \frac
+            {\partial s}
+            {\partial x}
+    \right)
+    +
+    \frac
+        {\partial}
+        {\partial y}
+    \left(
+        D_{y}
+        \frac
+            {\partial s}
+            {\partial y}
+    \right)
+    =
+    \dot{M}_s
+    -
+    \dot{M}_b
+    -
+    \frac
+        {\partial H}
+        {\partial t}
+\end{equation*}
+
+\begin{equation*}
+    \frac
+        {\partial s}
+        {\partial t}
+    =
+    -
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        D_{x}
+        \frac
+            {\partial s}
+            {\partial x}
+    \right)
+    -
+    \frac
+        {\partial}
+        {\partial y}
+    \left(
+        D_{y}
+        \frac
+            {\partial s}
+            {\partial y}
+    \right)
+    +
+    \frac
+        {\partial b}
+        {\partial t}
+    +
+    \dot{M}_s
+    -
+    \dot{M}_b
+\end{equation*}
+
+В таком виде уравнение уже можно приводить к дискретному виду
+с помощью разделенных разностей. Значения компонентов 
+диффузивности рассчитываются в узлах смещенной сетки.

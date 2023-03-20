@@ -1,0 +1,177 @@
+\section*{Дискретизация уравнения поверхности}
+
+При дискретизации уравнения поверхности можно использовать
+полученные выше дискретизации операторов. Например,
+дискретизацию для оператора
+$
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        g
+        \frac
+            {\partial f}
+            {\partial x}
+    \right)
+$.
+
+Запишем исходное уравнение и сразу перейдем к дискретной форме
+
+\begin{equation*}
+    \frac
+        {\partial s}
+        {\partial t}
+    =
+    -
+    \frac
+        {\partial}
+        {\partial x}
+    \left(
+        D_{x}
+        \frac
+            {\partial s}
+            {\partial x}
+    \right)
+    -
+    \frac
+        {\partial}
+        {\partial y}
+    \left(
+        D_{y}
+        \frac
+            {\partial s}
+            {\partial y}
+    \right)
+    +
+    \frac
+        {\partial b}
+        {\partial t}
+    +
+    \dot{M}_s
+    -
+    \dot{M}_b
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \frac
+        {s_{ijl} - s_{ijl-1}}
+        {\Delta t_{l}}
+        =
+        &
+        -
+        \frac
+            {1}
+            {\Delta x^2}
+        \left\{
+            s_{i-1jl}
+            D_{x_{i-\onehalf jl}}
+            +
+            s_{ijl}
+            \left[
+                -
+                D_{x_{i-\onehalf jl}}
+                -
+                D_{x_{i+\onehalf jl}}
+            \right]
+            +
+            s_{i+1jl}
+            D_{x_{i+\onehalf jl}}
+        \right\}
+        -
+        \\ &
+        -
+        \frac
+            {1}
+            {\Delta y^2}
+        \left\{
+            s_{ij-1l}
+            D_{y_{ij-\onehalf l}}
+            +
+            s_{ijl}
+            \left[
+                -
+                D_{y_{ij-\onehalf l}}
+                -
+                D_{y_{ij+\onehalf l}}
+            \right]
+            +
+            s_{ij+1l}
+            D_{y_{ij+\onehalf l}}
+        \right\}
+        +
+        \\ &
+        +
+        \frac
+            {b_{ijl} - b_{ijl-1}}
+            {\Delta t_{l}}
+        +
+        \dot{M}_{s_{ijl}}
+        -
+        \dot{M}_{b_{ijl}}        
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        &
+        s_{i-1jl}
+            \left[
+                \frac{D_{x_{i-\onehalf jl}}}
+                {\Delta x^2}
+            \right]
+            +
+            s_{ij-1l}
+            \left[
+                \frac
+                    {D_{y_{ij-\onehalf l}}}
+                    {\Delta y^2}
+            \right]
+            +
+            s_{ijl}
+            \left[
+                \frac
+                    {1}
+                    {\Delta t_{l}}
+                -
+                \frac
+                    {D_{x_{i-\onehalf jl}} + D_{x_{i+\onehalf jl}}}
+                    {\Delta x^2}
+                -
+                \frac
+                    {D_{y_{ij-\onehalf l}} + D_{y_{ij+\onehalf l}}}
+                    {\Delta y^2}
+            \right]
+            +
+            \\ &
+            s_{ij+1l}
+            \left[
+                \frac
+                    {D_{y_{ij+\onehalf l}}}
+                    {\Delta y^2}        
+            \right]
+            +
+            s_{i+1jl}
+            \left[
+                \frac
+                    {D_{x_{i+\onehalf jl}}}
+                    {\Delta x^2}
+            \right]
+            =
+            s_{ijl-1}
+            \left[
+                \frac
+                    {1}
+                    {\Delta t_{l}}
+            \right]
+            +
+            \frac
+                {b_{ijl} - b_{ijl-1}}
+                {\Delta t_{l}}
+            +
+            \dot{M}_{s_{ijl}}
+            -
+            \dot{M}_{b_{ijl}}
+    \end{split}
+\end{equation*}
+

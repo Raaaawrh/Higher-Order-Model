@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/main.dir/src/main.c++.o CMakeFiles/main.dir/src/Field.c++.o CMakeFiles/main.dir/src/Mesh.c++.o CMakeFiles/main.dir/src/Model.c++.o -o main 
