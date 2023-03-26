@@ -1126,26 +1126,25 @@
         \frac
             {1}
             {
-                \Delta \xi^2_{k}
-                \Delta \xi_{k - \onehalf}
-                \Delta \xi_{k + \onehalf}
+                2
+                \Delta \xi_{k}
             }
         \left\{
             f_{i, j, k - 1}
             \left[
-                \Delta \xi^2_{k+\onehalf}
+                2
+                \frac
+                    {\Delta \xi_{k + \onehalf}}
+                    {\Delta \xi_{k - \onehalf}}
                 g_{i, j, k-\onehalf}
                 +
-                \frac
-                    {
-                        \Delta \xi_{k + \onehalf}
-                        \left(
-                            \Delta \xi_{k - \onehalf}
-                            -
-                            \Delta \xi_{k + \onehalf}
-                        \right)
-                    }
-                    {2}
+                \left(
+                    1
+                    -
+                    \frac
+                        {\Delta \xi_{k - \onehalf}}
+                        {\Delta \xi_{k + \onehalf}}
+                \right)
                 g_{i, j, k+\onehalf}
             \right]
             +
@@ -1155,26 +1154,30 @@
             +
             f_{i, j, k}
             \left[
-                \Delta \xi_{k}
+                -
                 \left(
-                    \left(
-                        -
-                        2
-                        \Delta \xi_{k-\onehalf}
-                        +
-                        \Delta \xi_{k+\onehalf}
-                    \right)
-                    g_{i, j, k-\onehalf}
+                    1
                     +
-                    \left(
-                        -
-                        2
-                        \Delta \xi_{k+\onehalf}
-                        +
-                        \Delta \xi_{k-\onehalf}
-                    \right)
-                    g_{i, j, k+\onehalf}
+                    2
+                    \frac
+                        {\Delta \xi_{k + \onehalf}}
+                        {\Delta \xi_{k - \onehalf}}
+                    -
+                    \frac
+                        {\Delta \xi_{k - \onehalf}}
+                        {\Delta \xi_{k + \onehalf}}
                 \right)
+                g_{i, j, k - \onehalf}
+                -
+                \left(
+                    1
+                    +
+                    2
+                    \frac
+                        {\Delta \xi_{k - \onehalf}}
+                        {\Delta \xi_{k + \onehalf}}
+                \right)
+                g_{i, j, k + \onehalf}
             \right]
             +
         \right.
@@ -1183,19 +1186,19 @@
             +
             f_{i, j, k + 1}
             \left[
-                \frac
-                    {
-                        \Delta \xi_{k - \onehalf}
-                        \left(
-                            \Delta \xi_{k + \onehalf}
-                            -
-                            \Delta \xi_{k - \onehalf}
-                        \right)
-                    }
-                    {2}
+                \left(
+                    1
+                    -
+                    \frac
+                        {\Delta \xi_{k + \onehalf}}
+                        {\Delta \xi_{k - \onehalf}}
+                \right)
                 g_{i, j, k - \onehalf}
                 +
-                \Delta \xi^2_{k - \onehalf}
+                2
+                \frac
+                    {\Delta \xi_{k - \onehalf}}
+                    {\Delta \xi_{k + \onehalf}}
                 g_{i, j, k + \onehalf}
             \right]
         \right\}
@@ -1204,7 +1207,14 @@
 
 Для удобства вывода вычислительных схем и повышения
 читаемости переобозначим коэффициенты при узловых значениях
-функции $f$.
+функции $f$. Для этого перечислим символьные переобоначения
+для коэффициентов при узлах искомой функции в указанных выше
+схемах.
+
+2D:
+\begin{equation*}
+    
+\end{equation*}
 
 2D:
 \begin{equation*}
@@ -1221,17 +1231,17 @@
         =
         f_{i-1,j}
         \left[
-            \alpha_{x} \left(-1\right)
+            \alpha_{xx} \left(-1, 0\right)
         \right]
         +
         f_{i,j}
         \left[
-            \alpha_{x} \left(0\right)
+            \alpha_{xx} \left(0, 0\right)
         \right]
         +
         f_{i+1,j}
         \left[
-            \alpha_{x} \left(1\right)
+            \alpha_{xx} \left(1, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1251,17 +1261,17 @@
         =
         f_{i-1, j-1}
         \left[
-            \beta_{x,y} \left(-1, -1\right)
+            \alpha_{xy} \left(-1, -1\right)
         \right]
         +
         f_{i-1,j}
         \left[
-            \beta_{x,y} \left(-1, 0\right)
+            \alpha_{xy} \left(-1, 0\right)
         \right]
         +
         f_{i-1, j+1}
         \left[
-            \beta_{x,y} \left(-1, 1\right)
+            \alpha_{xy} \left(-1, 1\right)
         \right]
         +
         \\
@@ -1269,17 +1279,17 @@
         +
         f_{i, j-1}
         \left[
-            \beta_{x,y} \left(0, -1\right)
+            \alpha_{xy} \left(0, -1\right)
         \right]
         +
         f_{i, j}
         \left[
-            \beta_{x,y} \left(0, 0\right)
+            \alpha_{xy} \left(0, 0\right)
         \right]
         +
         f_{i, j+1}
         \left[
-            \beta_{x,y} \left(0, 1\right)
+            \alpha_{xy} \left(0, 1\right)
         \right]
         +
         \\
@@ -1287,17 +1297,17 @@
         +
         f_{i+1, j-1}
         \left[
-            \beta_{x,y} \left(1, -1\right)
+            \alpha_{xy} \left(1, -1\right)
         \right]
         +
         f_{i+1, j}
         \left[
-            \beta_{x,y} \left(1, 0\right)
+            \alpha_{xy} \left(1, 0\right)
         \right]
         +
         f_{i+1, j+1}
         \left[
-            \beta_{x,y} \left(1, 1\right)
+            \alpha_{xy} \left(1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1317,17 +1327,17 @@
         =
         f_{i-1, j-1}
         \left[
-            \beta_{y,x} \left(-1, -1\right)
+            \alpha_{yx} \left(-1, -1\right)
         \right]
         +
         f_{i-1,j}
         \left[
-            \beta_{y,x} \left(-1, 0\right)
+            \alpha_{yx} \left(-1, 0\right)
         \right]
         +
         f_{i-1, j+1}
         \left[
-            \beta_{y,x} \left(-1, 1\right)
+            \alpha_{yx} \left(-1, 1\right)
         \right]
         +
         \\
@@ -1335,17 +1345,17 @@
         +
         f_{i, j-1}
         \left[
-            \beta_{y,x} \left(0, -1\right)
+            \alpha_{yx} \left(0, -1\right)
         \right]
         +
         f_{i, j}
         \left[
-            \beta_{y,x} \left(0, 0\right)
+            \alpha_{yx} \left(0, 0\right)
         \right]
         +
         f_{i, j+1}
         \left[
-            \beta_{y,x} \left(0, 1\right)
+            \alpha_{yx} \left(0, 1\right)
         \right]
         +
         \\
@@ -1353,17 +1363,17 @@
         +
         f_{i+1, j-1}
         \left[
-            \beta_{y,x} \left(1, -1\right)
+            \alpha_{yx} \left(1, -1\right)
         \right]
         +
         f_{i+1, j}
         \left[
-            \beta_{y,x} \left(1, 0\right)
+            \alpha_{yx} \left(1, 0\right)
         \right]
         +
         f_{i+1, j+1}
         \left[
-            \beta_{y,x} \left(1, 1\right)
+            \alpha_{yx} \left(1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1381,17 +1391,17 @@
         =
         f_{i, j-1}
         \left[
-            \alpha_y \left(-1\right)
+            \alpha_{yy} \left(0, -1\right)
         \right]
         +
         f_{i, j}
         \left[
-            \alpha_y \left(0\right)
+            \alpha_{yy} \left(0, 0\right)
         \right]
         +
         f_{i, j+1}
         \left[
-            \alpha_y \left(1\right)
+            \alpha_{yy} \left(0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1400,18 +1410,18 @@
 
 \begin{equation*}
     \begin{cases}
-        \beta_{x,y} \left(p, q\right)
+        \alpha_{x,y} \left(p, q\right)
         =
         -
-        \beta_{y,x} \left(p,q\right),
+        \alpha_{y,x} \left(p,q\right),
             \quad
             \left|p\right|
             \ne
             \left|q\right|
         \\
-        \beta_{x,y} \left(p, q\right)
+        \alpha_{x,y} \left(p, q\right)
         =
-        \beta_{y,x} \left(p,q\right),
+        \alpha_{y,x} \left(p,q\right),
             \quad
             \left|p\right|
             =
@@ -1451,13 +1461,13 @@
         f_{i-1, j-1}
         \left[
             2
-            \beta_{x,y} \left(-1, -1\right)
+            \alpha_{x,y} \left(-1, -1\right)
         \right]
         +
         f_{i-1, j+1}
         \left[
             2
-            \beta_{x,y} \left(-1, 1\right)
+            \alpha_{x,y} \left(-1, 1\right)
         \right]
         +
         \\
@@ -1466,19 +1476,19 @@
         f_{i,f}
         \left[
             2
-            \beta_{x,y} \left(0, 0\right)
+            \alpha_{x,y} \left(0, 0\right)
         \right]
         +
         f_{i+1, j-1}
         \left[
             2
-            \beta_{x,y} \left(1, -1\right)
+            \alpha_{x,y} \left(1, -1\right)
         \right]
         +
         f_{i+1, j+1}
         \left[
             2
-            \beta_{x,y} \left(1, 1\right)
+            \alpha_{x,y} \left(1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1499,17 +1509,17 @@
         =
         f_{i-1, j, k}
         \left[
-            \alpha_{x} \left(-1\right)
+            \beta_{xx} \left(-1, 0, 0\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \alpha_{x} \left(0\right)
+            \beta_{xx} \left(0, 0, 0\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
-            \alpha_{x} \left(1\right)
+            \beta_{xx} \left(1, 0, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1529,17 +1539,17 @@
         =
         f_{i-1, j-1, k}
         \left[
-            \beta_{x,y} \left(-1, -1\right)
+            \beta_{xy} \left(-1, -1, 0\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
-            \beta_{x,y} \left(-1, 0\right)
+            \beta_{xy} \left(-1, 0, 0\right)
         \right]
         +
         f_{i-1, j+1, k}
         \left[
-            \beta_{x,y} \left(-1, 1\right)
+            \beta_{xy} \left(-1, 1, 0\right)
         \right]
         +
         \\
@@ -1547,17 +1557,17 @@
         +
         f_{i, j-1, k}
         \left[
-            \beta_{x,y} \left(0,-1\right)
+            \beta_{xy} \left(0,-1, 0\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \beta_{x,y} \left(0,0\right)
+            \beta_{xy} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
-            \beta_{x,y} \left(0, 1\right)
+            \beta_{xy} \left(0, 1, 0\right)
         \right]
         +
         \\
@@ -1565,17 +1575,17 @@
         +
         f_{i+1, j-1, k}
         \left[
-            \beta_{x,y} \left(1, -1\right)
+            \beta_{xy} \left(1, -1, 0\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
-            \beta_{x,y} \left(1, 0\right)
+            \beta_{xy} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j+1, k}
         \left[
-            \beta_{x,y} \left(1, 1\right)
+            \beta_{xy} \left(1, 1, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1595,17 +1605,17 @@
         =
         f_{i-1, j, k-1}
         \left[
-            \beta_{x, \xi} \left(-1, -1\right)
+            \beta_{x\xi} \left(-1, 0, -1\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
-            \beta_{x, \xi} \left(-1, 0\right)
+            \beta_{x\xi} \left(-1, 0, 0\right)
         \right]
         +
         f_{i-1, j, k+1}
         \left[
-            \beta_{x, \xi} \left(-1, 1\right)
+            \beta_{x\xi} \left(-1, 0, 1\right)
         \right]
         +
         \\
@@ -1613,17 +1623,17 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{x, \xi} \left(0,-1\right)
+            \beta_{x\xi} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \beta_{x, \xi} \left(0,0\right)
+            \beta_{x\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{x, \xi} \left(0, 1\right)
+            \beta_{x\xi} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1631,17 +1641,17 @@
         +
         f_{i+1, j, k-1}
         \left[
-            \beta_{x, \xi} \left(1, -1\right)
+            \beta_{x\xi} \left(1, 0, -1\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
-            \beta_{x, \xi} \left(1, 0\right)
+            \beta_{x\xi} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j, k+1}
         \left[
-            \beta_{x, \xi} \left(1, 1\right)
+            \beta_{x\xi} \left(1, 0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1661,17 +1671,17 @@
         =
         f_{i-1, j-1, k}
         \left[
-            \beta_{y, x} \left(-1, -1\right)
+            \beta_{yx} \left(-1, -1, 0\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
-            \beta_{y, x} \left(-1, 0\right)
+            \beta_{yx} \left(-1, 0, 0\right)
         \right]
         +
         f_{i-1, j+1, k}
         \left[
-            \beta_{y, x} \left(-1, 1\right)
+            \beta_{yx} \left(-1, 1, 0\right)
         \right]
         +
         \\
@@ -1679,17 +1689,17 @@
         +
         f_{i, j-1, k}
         \left[
-            \beta_{y, x} \left(0,-1\right)
+            \beta_{yx} \left(0, -1, 0\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \beta_{y, x} \left(0,0\right)
+            \beta_{yx} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
-            \beta_{y, x} \left(0, 1\right)
+            \beta_{yx} \left(0, 1, 0\right)
         \right]
         +
         \\
@@ -1697,17 +1707,17 @@
         +
         f_{i+1, j-1, k}
         \left[
-            \beta_{y, x} \left(1, -1\right)
+            \beta_{yx} \left(1, -1, 0\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
-            \beta_{y, x} \left(1, 0\right)
+            \beta_{yx} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j+1, k}
         \left[
-            \beta_{y, x} \left(1, 1\right)
+            \beta_{yx} \left(1, 1, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1726,17 +1736,17 @@
         =
         f_{i, j-1, k}
         \left[
-            \alpha_{y} \left(-1\right)
+            \beta_{yy} \left(0, -1, 0\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \alpha_{y} \left(0\right)
+            \beta_{yy} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
-            \alpha_{y} \left(1\right)
+            \beta_{yy} \left(0, 1, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1756,17 +1766,17 @@
         =
         f_{i, j-1, k-1}
         \left[
-            \beta_{y, \xi} \left(-1, -1\right)
+            \beta_{y\xi} \left(0, -1, -1\right)
         \right]
         +
         f_{i, j-1, k}
         \left[
-            \beta_{y, \xi} \left(-1, 0\right)
+            \beta_{y\xi} \left(0, -1, 0\right)
         \right]
         +
         f_{i, j-1, k+1}
         \left[
-            \beta_{y, \xi} \left(-1, 1\right)
+            \beta_{y\xi} \left(0, -1, 1\right)
         \right]
         +
         \\
@@ -1774,17 +1784,17 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{y, \xi} \left(0,-1\right)
+            \beta_{y\xi} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \beta_{y, \xi} \left(0,0\right)
+            \beta_{y\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{y, \xi} \left(0, 1\right)
+            \beta_{y\xi} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1792,17 +1802,17 @@
         +
         f_{i, j+1, k-1}
         \left[
-            \beta_{y, \xi} \left(1, -1\right)
+            \beta_{y\xi} \left(0, 1, -1\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
-            \beta_{y, \xi} \left(1, 0\right)
+            \beta_{y\xi} \left(0, 1, 0\right)
         \right]
         +
         f_{i, j+1, k+1}
         \left[
-            \beta_{y, \xi} \left(1, 1\right)
+            \beta_{y\xi} \left(0, 1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1822,18 +1832,19 @@
         =
         f_{i-1, j, k-1}
         \left[
-            \beta_{\xi, x} \left(-1, -1\right)
+            \beta_{\xi x} \left(-1, 0, -1\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
-            \gamma_{\xi, x} \left(-1\right)
-            \beta_{\xi, x} \left(-1, 0\right)
+            \gamma_{\xi x} \left(-1, 0, 0\right)
+            +
+            \beta_{\xi x} \left(-1, 0, 0\right)
         \right]
         +
         f_{i-1, j, k+1}
         \left[
-            \beta_{\xi, x} \left(-1, 1\right)
+            \beta_{\xi x} \left(-1, 0, 1\right)
         \right]
         +
         \\
@@ -1841,18 +1852,19 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{\xi, x} \left(0,-1\right)
+            \beta_{\xi x} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \gamma_{\xi, x} \left(0\right)
-            \beta_{\xi, x} \left(0,0\right)
+            \gamma_{\xi x} \left(0, 0, 0\right)
+            +
+            \beta_{\xi x} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{\xi, x} \left(0, 1\right)
+            \beta_{\xi x} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1860,18 +1872,19 @@
         +
         f_{i+1, j, k-1}
         \left[
-            \beta_{\xi, x} \left(1, -1\right)
+            \beta_{\xi x} \left(1, 0, -1\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
-            \gamma_{\xi, x} \left(1\right)
-            \beta_{\xi, x} \left(1, 0\right)
+            \gamma_{\xi x} \left(1, 0, 0\right)
+            +
+            \beta_{\xi x} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j, k+1}
         \left[
-            \beta_{\xi, x} \left(1, 1\right)
+            \beta_{\xi x} \left(1, 0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1891,18 +1904,19 @@
         =
         f_{i, j-1, k-1}
         \left[
-            \beta_{\xi, y} \left(-1, -1\right)
+            \beta_{\xi y} \left(0, -1, -1\right)
         \right]
         +
         f_{i, j-1, k}
         \left[
-            \gamma_{\xi, y} \left(-1\right)
-            \beta_{\xi, y} \left(-1, 0\right)
+            \gamma_{\xi y} \left(0, -1, 0\right)
+            +
+            \beta_{\xi y} \left(0, -1, 0\right)
         \right]
         +
         f_{i, j-1, k+1}
         \left[
-            \beta_{\xi, y} \left(-1, 1\right)
+            \beta_{\xi y} \left(0, -1, 1\right)
         \right]
         +
         \\
@@ -1910,18 +1924,19 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{\xi, y} \left(0,-1\right)
+            \beta_{\xi y} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \gamma_{\xi, y} \left(0\right)
-            \beta_{\xi, y} \left(0,0\right)
+            \gamma_{\xi y} \left(0, 0, 0\right)
+            +
+            \beta_{\xi y} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{\xi, y} \left(0, 1\right)
+            \beta_{\xi y} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1929,18 +1944,19 @@
         +
         f_{i, j+1, k-1}
         \left[
-            \beta_{\xi, y} \left(1, -1\right)
+            \beta_{\xi y} \left(0, 1, -1\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
-            \gamma_{\xi, y} \left(1\right)
-            \beta_{\xi, y} \left(1, 0\right)
+            \gamma_{\xi y} \left(0, 1, 0\right)
+            +
+            \beta_{\xi y} \left(0, 1, 0\right)
         \right]
         +
         f_{i, j+1, k+1}
         \left[
-            \beta_{\xi, y} \left(1, 1\right)
+            \beta_{\xi y} \left(0, 1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1959,17 +1975,17 @@
         =
         f_{i, j, k-1}
         \left[
-            \alpha_{\xi} \left(-1\right)
+            \beta_{\xi\xi} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
-            \alpha_{\xi} \left(0\right)
+            \alpha_{\xi\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \alpha_{\xi} \left(1\right)
+            \alpha_{\xi\xi} \left(0, 0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -2007,13 +2023,13 @@
         f_{i-1, j-1, k}
         \left[
             2
-            \beta_{x,y} \left(-1, -1\right)
+            \beta_{xy} \left(-1, -1, 0\right)
         \right]
         +
         f_{i-1, j+1, k}
         \left[
             2
-            \beta_{x,y} \left(-1, 1\right)
+            \beta_{xy} \left(-1, 1, 0\right)
         \right]
         +
         \\
@@ -2022,19 +2038,19 @@
         f_{i, f, k}
         \left[
             2
-            \beta_{x,y} \left(0, 0\right)
+            \beta_{xy} \left(0, 0, 0\right)
         \right]
         +
         f_{i+1, j-1, k}
         \left[
             2
-            \beta_{x,y} \left(1, -1\right)
+            \beta_{xy} \left(1, -1, 0\right)
         \right]
         +
         f_{i+1, j+1, k}
         \left[
             2
-            \beta_{x,y} \left(1, 1\right)
+            \beta_{xy} \left(1, 1, 0\right)
         \right]
     \end{split}
 \end{equation*}
@@ -2069,12 +2085,12 @@
         f_{i-1, j, k-1}
         \left[
             2
-            \beta_{x, \xi} \left(-1, -1\right)
+            \beta_{x\xi} \left(-1, 0, -1\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
-            \gamma_{\xi, x} \left(-1\right)
+            \gamma_{\xi x} \left(-1, 0, 0\right)
         \right]
         +
         \\
@@ -2083,21 +2099,21 @@
         f_{i-1, j, k+1}
         \left[
             2
-            \beta_{x, \xi} \left(-1, 1\right)
+            \beta_{x\xi} \left(-1, 0, 1\right)
         \right]
         +
         f_{i, f, k}
         \left[
-            \gamma_{\xi, x} \left(0\right)
+            \gamma_{\xi x} \left(0, 0, 0\right)
             +
             2
-            \beta_{x, \xi} \left(0, 0\right)
+            \beta_{x\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i+1, j, k-1}
         \left[
             2
-            \beta_{x, \xi} \left(1, -1\right)
+            \beta_{x\xi} \left(1, 0, -1\right)
         \right]
         +
         \\
@@ -2105,13 +2121,13 @@
         +
         f_{i+1, j, k}
         \left[
-            \gamma_{\xi, x} \left(1\right)
+            \gamma_{\xi x} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j, k+1}
         \left[
             2
-            \beta_{x, \xi} \left(1, 1\right)
+            \beta_{x\xi} \left(1, 0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -2145,12 +2161,12 @@
         f_{i, j-1, k-1}
         \left[
             2
-            \beta_{y, \xi} \left(-1, -1\right)
+            \beta_{y\xi} \left(0, -1, -1\right)
         \right]
         +
         f_{i, j-1, k}
         \left[
-            \gamma_{\xi, y} \left(-1\right)
+            \gamma_{\xi y} \left(0, -1, 0\right)
         \right]
         +
         \\
@@ -2159,21 +2175,21 @@
         f_{i, j-1, k+1}
         \left[
             2
-            \beta_{y, \xi} \left(-1, 1\right)
+            \beta_{y\xi} \left(0, -1, 1\right)
         \right]
         +
         f_{i, f, k}
         \left[
-            \gamma_{\xi, y} \left(0\right)
+            \gamma_{\xi y} \left(0, 0, 0\right)
             +
             2
-            \beta_{y, \xi} \left(0, 0\right)
+            \beta_{y\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j+1, k-1}
         \left[
             2
-            \beta_{y, \xi} \left(1, -1\right)
+            \beta_{y\xi} \left(0, 1, -1\right)
         \right]
         +
         \\
@@ -2181,13 +2197,13 @@
         +
         f_{i, j+1, k}
         \left[
-            \gamma_{\xi, y} \left(1\right)
+            \gamma_{\xi y} \left(0, 1, 0\right)
         \right]
         +
         f_{i, j+1, k+1}
         \left[
             2
-            \beta_{y, \xi} \left(1, 1\right)
+            \beta_{y\xi} \left(0, 1, 1\right)
         \right]
     \end{split}
 \end{equation*}

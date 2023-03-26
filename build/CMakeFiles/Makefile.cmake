@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/anatolii/Documents/GitHub/Higher-Order-Model/CMakeLists.txt"
-  "CMakeFiles/3.26.0-rc6/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.26.0-rc6/CMakeSystem.cmake"
+  "CMakeFiles/3.26.0/CMakeCXXCompiler.cmake"
+  "CMakeFiles/3.26.0/CMakeSystem.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake/Modules/CMakeGenericSystem.cmake"
