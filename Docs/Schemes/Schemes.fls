@@ -238,6 +238,9 @@ INPUT ./Parts/discretevelocityequation.aux
 INPUT ./Parts/discretesurfaceequasion.aux
 INPUT ./Parts/discretesurfaceequasion.aux
 INPUT ./Parts/discretesurfaceequasion.aux
+INPUT ./Parts/discreteheatequation.aux
+INPUT ./Parts/discreteheatequation.aux
+INPUT ./Parts/discreteheatequation.aux
 OUTPUT Schemes.aux
 INPUT /home/anatolii/.texlive2021/texmf-var/fonts/tfm/lh/lh-t2a/larm2074.tfm
 INPUT /home/anatolii/.texlive2021/texmf-var/fonts/tfm/lh/lh-t2a/larm1440.tfm
@@ -328,6 +331,15 @@ INPUT ./Parts/discretesurfaceequasion.tex
 INPUT ./Parts/discretesurfaceequasion.tex
 INPUT ./Parts/discretesurfaceequasion.tex
 INPUT ./Parts/discretesurfaceequasion.tex
+INPUT ./Parts/discreteheatequation.tex
+OUTPUT ./Parts/discreteheatequation.aux
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
+INPUT ./Parts/discreteheatequation.tex
 INPUT Schemes.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT ./Parts/discretecommon.aux
@@ -345,6 +357,9 @@ INPUT ./Parts/discretevelocityequation.aux
 INPUT ./Parts/discretesurfaceequasion.aux
 INPUT ./Parts/discretesurfaceequasion.aux
 INPUT ./Parts/discretesurfaceequasion.aux
+INPUT ./Parts/discreteheatequation.aux
+INPUT ./Parts/discreteheatequation.aux
+INPUT ./Parts/discreteheatequation.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

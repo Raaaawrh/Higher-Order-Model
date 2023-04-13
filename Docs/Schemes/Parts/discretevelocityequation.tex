@@ -12,157 +12,157 @@ $u \leftrightarrow v$ и $x \leftrightarrow y$, и получить
     \begin{split}
         4
         \frac
-            {\partial }
-            {\partial x'}
+        {\partial }
+        {\partial x'}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial x'}
+        \eta
+        \frac
+        {\partial u}
+        {\partial x'}
         \right)
         &
         +
         4
         a_x
         \frac
-            {\partial }
-            {\partial x'}
+        {\partial }
+        {\partial x'}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial u}
+        {\partial \xi}
         \right)
         +
         \frac
-            {\partial }
-            {\partial y'}
+        {\partial }
+        {\partial y'}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial y'}
+        \eta
+        \frac
+        {\partial u}
+        {\partial y'}
         \right)
         +
         a_y
         \frac
-            {\partial }
-            {\partial y'}
+        {\partial }
+        {\partial y'}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial u}
+        {\partial \xi}
         \right)
         +
         4
         a_x
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial x'}
+        \eta
+        \frac
+        {\partial u}
+        {\partial x'}
         \right)
         +
         a_y
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial y'}
+        \eta
+        \frac
+        {\partial u}
+        {\partial y'}
         \right)
         +
         \\
         &
         +
         \left(
-            4
-            a^2_x
-            +
-            a^2_y
-            +
-            a^2_z
+        4
+        a^2_x
+        +
+        a^2_y
+        +
+        a^2_z
         \right)
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial u}
+        {\partial \xi}
         \right)
         +
         \left(
-            4
-            b_x
-            +
-            b_y
+        4
+        b_x
+        +
+        b_y
         \right)
         \left(
-            \eta
-            \frac
-                {\partial u}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial u}
+        {\partial \xi}
         \right)
         =
         \rho
         g
         \frac
-            {\partial s}
-            {\partial x'}
+        {\partial s}
+        {\partial x'}
         -
         \\
         &
         -
         2
         \frac
-            {\partial }
-            {\partial x'}
+        {\partial }
+        {\partial x'}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial y'}
+        \eta
+        \frac
+        {\partial v}
+        {\partial y'}
         \right)
         -
         2
         a_y
         \frac
-            {\partial }
-            {\partial x'}
+        {\partial }
+        {\partial x'}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial v}
+        {\partial \xi}
         \right)
         -
         \frac
-            {\partial }
-            {\partial y'}
+        {\partial }
+        {\partial y'}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial x'}
+        \eta
+        \frac
+        {\partial v}
+        {\partial x'}
         \right)
         -
         a_x
         \frac
-            {\partial }
-            {\partial y'}
+        {\partial }
+        {\partial y'}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial v}
+        {\partial \xi}
         \right)
         -
         \\
@@ -170,48 +170,370 @@ $u \leftrightarrow v$ и $x \leftrightarrow y$, и получить
         -
         a_y
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial x'}
+        \eta
+        \frac
+        {\partial v}
+        {\partial x'}
         \right)
         -
         2
         a_x
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial y'}
+        \eta
+        \frac
+        {\partial v}
+        {\partial y'}
         \right)
         -
         3
         a_x
         a_y
         \frac
-            {\partial }
-            {\partial \xi}
+        {\partial }
+        {\partial \xi}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial v}
+        {\partial \xi}
         \right)
         -
         3
         c_{xy}
         \left(
-            \eta
-            \frac
-                {\partial v}
-                {\partial \xi}
+        \eta
+        \frac
+        {\partial v}
+        {\partial \xi}
         \right)
     \end{split}
 \end{equation*}
 
+Дискретизацию уравнения можно получить, просто подставив указанные
+выше конечно-разностные аппроксимации операторов. В таком случае
+получим систему линейных уравнений. Однако в совокупности уравнения
+для $u$ и $v$ компонент образуют нелинейную задачу, которую решать
+предлагается (J.J. Furst. Improved convergence and stability properties in a
+three-dimensional higher-order ice sheet model, 2011) итерациями
+Пикара. Опишем кратко.
+Уравнения для $u$ и $v$ образуют две системы
+\begin{equation*}
+    \begin{cases}
+        A_u(v^{r-1}) u^{r} = b_{u}(v^{r-1})
+        \\
+        A_v(u^{r-1}) v^{r} = b_{v}(u^{r-1})
+    \end{cases}
+\end{equation*}
+Пусть есть некоторое начальное приближение $(u^0, v^0)$. Используя
+это приближение вычисляется приближение вязкости
+\begin{equation*}
+    \eta
+    =
+    \onehalf
+    A^{\frac{-1}{n}}(\Theta^{*})
+    \left\{
+    \left(
+    \frac
+    {\partial u}
+    {\partial x}
+    \right)^2
+    +
+    \left(
+    \frac
+    {\partial v}
+    {\partial y}
+    \right)^2
+    +
+    \frac
+    {\partial u}
+    {\partial x}
+    \frac
+    {\partial v}
+    {\partial y}
+    +
+    \frac
+    {1}
+    {4}
+    \left(
+    \frac
+    {\partial u}
+    {\partial y}
+    +
+    \frac
+    {\partial v}
+    {\partial x}
+    \right)^2
+    +
+    \frac
+    {1}
+    {4}
+    \left(
+    \frac
+    {\partial u}
+    {\partial z}
+    \right)^2
+    +
+    \frac
+    {1}
+    {4}
+    \left(
+    \frac
+    {\partial v}
+    {\partial z}
+    \right)^2
+    +
+    \dot{\varepsilon^2_0}
+    \right\}^{\frac{1-n}{2n}}
+\end{equation*}
+
+или, после преобразования координат:
+
+\begin{equation*}
+    \begin{split}
+        \eta
+        =
+        &
+        \onehalf
+        A^{\frac{-1}{n}}(\Theta^{*})
+        \left\{
+        \left(
+        \frac
+        {\partial u}
+        {\partial x^{'}}
+        +
+        a_x
+        \frac
+        {\partial u}
+        {\partial \xi}
+        \right)^2
+        +
+        \left(
+        \frac
+        {\partial v}
+        {\partial y^{'}}
+        +
+        a_y
+        \frac
+        {\partial v}
+        {\partial \xi}
+        \right)^2
+        +
+        \left(
+        \frac
+        {\partial u}
+        {\partial x^{'}}
+        +
+        a_x
+        \frac
+        {\partial u}
+        {\partial \xi}
+        \right)
+        \left(
+        \frac
+        {\partial v}
+        {\partial y^{'}}
+        +
+        a_y
+        \frac
+        {\partial v}
+        {\partial \xi}
+        \right)
+        +
+        \right.
+        \\
+        &
+        \left.
+        +
+        \frac
+        {1}
+        {4}
+        \left(
+        \frac
+        {\partial u}
+        {\partial y^{'}}
+        +
+        a_y
+        \frac
+        {\partial u}
+        {\partial \xi}
+        +
+        \frac
+        {\partial v}
+        {\partial x^{'}}
+        +
+        a_y
+        \frac
+        {\partial v}
+        {\partial \xi}
+        \right)^2
+        +
+        \frac
+        {1}
+        {4}
+        \left(
+        a_z
+        \frac
+        {\partial u}
+        {\partial \xi}
+        \right)^2
+        +
+        \frac
+        {1}
+        {4}
+        \left(
+        a_z
+        \frac
+        {\partial v}
+        {\partial \xi}
+        \right)^2
+        +
+        \dot{\varepsilon^2_0}
+        \right\}^{\frac{1-n}{2n}}
+    \end{split}
+\end{equation*}
+
+где
+\begin{equation*}
+    A (\Theta^*)
+    =
+    m
+    \left(
+        \frac
+            {1}
+            {B_0}
+    \right)^n
+    \exp
+    \left(
+        \frac
+            {3C}
+            {(\Theta_r - \Theta^*)^K}
+        -
+        \frac
+            {Q}
+            {R\Theta^*}
+    \right)
+\end{equation*}
+
+Более подробное описание можно найти в документации CISM 2.0 либо
+в статье (F. Pattyn A new three-dimensional higher-order 
+thermomechanical ice sheet model: Basic sensivity, ice stream
+development, and ice flow across subglacial lakes, 2003)
+
+После производим решение первой системы для $u^1$, используя
+$(u^0, v^0)$ и решение $v^1$. Потом повторяем с использованием
+$(u^1, v^1)$ и повторяем до сходимости.
+
+Другой подход заключается в одновременном решении совокупности
+систем для $u$ и $v$. Тогда размер системы увеличится в 2 раза, и
+вычислительная сложность примено в 4 раза. J.J. Furst утверждает,
+что вполне достаточно исполььзовать раздельное решение, а совместное
+решение ничего кроме увеличения вычислительных затрат не влечет.
+
+При решении необходимо установить граничные условия. На границах домена
+по осям $x$ и $y$ принято ставить условие нулевой скорости.
+На поверхности применяется так называемое граничное условие свободной
+поверхности (stress-free surface boundary condition)
+
+Напишем его сразу в преобразованных координатах
+\begin{equation*}
+    4
+    \frac
+    {\partial s}
+    {\partial x'}
+    \frac
+    {\partial u}
+    {\partial x'}
+    +
+    \frac
+    {\partial s}
+    {\partial y'}
+    \frac
+    {\partial u}
+    {\partial y'}
+    +
+    \left(
+    4
+    a_x
+    \frac
+    {\partial s}
+    {\partial x'}
+    +
+    a_y
+    \frac
+    {\partial s}
+    {\partial y}
+    +
+    a_z
+    \right)
+    \frac
+    {\partial u}
+    {\partial \xi}
+    =
+    -
+    \frac
+    {\partial s}
+    {\partial y'}
+    \frac
+    {\partial v}
+    {\partial x'}
+    -
+    2
+    \frac
+    {\partial s}
+    {\partial x}
+    \frac
+    {\partial v}
+    {\partial y'}
+    -
+    \left(
+    2
+    a_y
+    \frac
+    {\partial s}
+    {\partial x'}
+    +
+    a_x
+    \frac
+    {\partial s}
+    {\partial y}
+    \right)
+    \frac
+    {\partial v}
+    {\partial \xi}
+\end{equation*}
+
+Для вычисления всех производных желательно использовать аппроксимации
+второго порядка. Во внутренних узлах -- центральные разности. На
+границах использовать односторонние разности (upstream finite-difference
+approximations), вывод которых несложен и проведен в (F. Pattyn Transient glacier response with a higher-order numerical
+ice-flow model, 2002). Любые уточнения можно найти также в документации
+к проекту CISM 2.0.
+
+Компоненту w после итераций получаем из условия несжимаемости
+\begin{equation*}
+    w(z)
+    -
+    w(b)
+    =
+    -
+    \int_{b}^{z}
+    \left(
+    \frac
+    {\partial u}
+    {\partial x}
+    +
+    \frac
+    {\partial v}
+    {\partial y}
+    dz
+    \right)
+\end{equation*}
+
+Простым численным интегрированием с использвоанием квадратурных
+формул.

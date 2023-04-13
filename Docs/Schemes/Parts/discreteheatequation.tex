@@ -1,0 +1,107 @@
+\section*{Уранение теплопроводности}
+Уравнение теплопроводности имеет вид
+\begin{equation*}
+    \rho
+    c_p
+    \frac
+        {\partial \Theta}
+        {\partial t}
+    =
+    k_i
+    \frac
+        {\partial^2 \Theta}
+        {\partial z^2}
+    -
+    \rho
+    c_p
+    \left(
+        u
+        \frac
+            {\partial \Theta}
+            {\partial x}
+        +
+        v
+        \frac
+            {\partial \Theta}
+            {\partial y}
+        +
+        w
+        \frac
+            {\partial \Theta}
+            {\partial z}
+    \right)
+    +
+    2
+    \dot{\varepsilon}
+    \sigma
+\end{equation*}
+
+Это уравнение имеет распространные в моделировании льда упрощения:
+\begin{itemize}
+    \item лед считается несжимаемой средой
+    \item лед считается изотропным (т.е. его теплофизические
+    характеристики ($c_p, k_i$ и др.) всюду постоянны)
+    \item температурное поле представляется в виде изотермических 
+    плоскостей с горизонтальной ориентацией. То есть градиент
+    температурного поля направлен всегда вдоль оси z (его составляющие
+    вдоль x и y осей пренебрежимо малы)
+\end{itemize}
+
+После замены координат уравнение принимает следующий вид.
+\begin{equation*}
+    \frac   
+        {\partial \Theta}
+        {\partial t'}
+    +
+    \frac   
+        {\partial \Theta}
+        {\partial \xi}
+    \left(
+        a_x
+        u
+        +
+        a_y
+        v
+        +
+        a_z
+        \left(
+            \frac   
+                {\partial s}
+                {\partial t'}
+            -
+            \xi
+            \frac   
+                {\partial H}
+                {\partial t'}
+            -
+            w
+        \right)
+    \right)
+    +
+    u
+    \frac   
+        {\partial \Theta}
+        {\partial x'}
+    +
+    v
+    \frac   
+        {\partial \Theta}
+        {\partial y'}
+    -
+    \frac
+        {k}
+        {H^2 \rho c_p}
+    \frac   
+        {\partial^2 \Theta}
+        {\partial \xi^2}
+    =
+    \frac
+        {2}
+        {\rho c_p}
+    \dot{\varepsilon}
+    \sigma
+\end{equation*}
+
+Дискретизация также проводится с использованием центральных
+разностей во внутренних узлах сетки и с сиспользвоанием трехточечных
+односторонних разностей на границе домена.
