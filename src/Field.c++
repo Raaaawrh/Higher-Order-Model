@@ -27,13 +27,16 @@ size_t Field<2>::getSizeY() const { return m_sizeY; }
 
 // Operators
 double &Field<2>::operator()(size_t _indexX, size_t _indexY) { return m_values[_indexX][_indexY]; }
+double const Field<2>::operator()(size_t _indexX, size_t _indexY) const { return m_values[_indexX][_indexY]; }
 
 // ---------- // 3D // ----------
 
 // Constructors and destructors
 Field<3>::Field(size_t _sizeX, size_t _sizeY, size_t _sizeZ)
     : m_sizeX{_sizeX}, m_sizeY{_sizeY}, m_sizeZ{_sizeZ},
-      m_values{vector<vector<vector<double>>>(m_sizeX, vector<vector<double>>(m_sizeY, vector<double>(m_sizeZ, 0.0)))} {}
+      m_values{vector<vector<vector<double>>>(m_sizeX, vector<vector<double>>(m_sizeY, vector<double>(m_sizeZ, 0.0)))}
+{
+}
 
 // Getters
 size_t Field<3>::getSizeX() const { return m_sizeX; }
@@ -42,3 +45,4 @@ size_t Field<3>::getSizeZ() const { return m_sizeZ; }
 
 // Operators
 double &Field<3>::operator()(size_t _indexX, size_t _indexY, size_t _indexZ) { return m_values[_indexX][_indexY][_indexZ]; }
+double Field<3>::operator()(size_t _indexX, size_t _indexY, size_t _indexZ) const { return m_values[_indexX][_indexY][_indexZ]; }

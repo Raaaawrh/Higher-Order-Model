@@ -812,18 +812,18 @@
             +
             f_{i - 1, j, k}
             \left[
-                -
-                4 \Delta \xi_{k}
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i-\onehalf,j,k-\onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
+                    g_{i-\onehalf,j,k+\onehalf}
                 \right)
-                g_{i - \onehalf, j, k}
-                +
+                -
                 \Delta \xi^2_{k + \onehalf}
                 g_{i - \onehalf, j, k - \onehalf}
-                -
+                +
                 \Delta \xi^2_{k - \onehalf}
                 g_{i - \onehalf, j, k + \onehalf}
             \right]
@@ -855,34 +855,35 @@
             +
             f_{i, j, k}
             \left[
-                4
-                \Delta \xi_{k}
+                -    
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i-\onehalf,j,k-\onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
-                \right)
-                \left(
-                    g_{i - \onehalf, j, k}
+                    g_{i-\onehalf,j,k+\onehalf}
                     -
-                    g_{i + \onehalf, j, k}
+                    g_{i+\onehalf,j,k-\onehalf}
+                    +
+                    g_{i+\onehalf,j,k+\onehalf}
                 \right)
-                -
+                +
             \right.
         \right.
         \\ & \qquad
         \left.
             \left.
-                -
+                +
                 \Delta \xi^2_{k + \onehalf}
                 g_{i - \onehalf, j, k - \onehalf}
-                +
+                -
                 \Delta \xi^2_{k - \onehalf}
                 g_{i - \onehalf, j, k + \onehalf}
-                +
+                -
                 \Delta \xi^2_{k + \onehalf}
                 g_{i + \onehalf, j, k - \onehalf}
-                -
+                +
                 \Delta \xi^2_{k - \onehalf}
                 g_{i + \onehalf, j, k + \onehalf}
             \right]
@@ -913,18 +914,19 @@
             +
             f_{i + 1, j, k}
             \left[
-                4
-                \Delta \xi_{k}
+                -    
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i+\onehalf,j,k-\onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
+                    g_{i+\onehalf,j,k+\onehalf}
                 \right)
-                g_{i + \onehalf, j, k}
-                -
+                +
                 \Delta \xi^2_{k + \onehalf}
                 g_{i + \onehalf, j, k - \onehalf}
-                +
+                -
                 \Delta \xi^2_{k - \onehalf}
                 g_{i + \onehalf, j, k + \onehalf}
             \right]
@@ -979,18 +981,18 @@
             +
             f_{i, j - 1, k}
             \left[
-                -
-                4 \Delta \xi_{k}
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i, j - \onehalf, k - \onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
+                    g_{i, j - \onehalf, k + \onehalf}
                 \right)
-                g_{i, j - \onehalf, k}
-                +
-                \Delta \xi^2_{k + \onehalf}
-                g_{i, j  - \onehalf, k - \onehalf}
                 -
+                \Delta \xi^2_{k + \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
+                +
                 \Delta \xi^2_{k - \onehalf}
                 g_{i, j - \onehalf, k + \onehalf}
             \right]
@@ -1010,7 +1012,7 @@
             \left[
                 -
                 \Delta \xi^2_{k + \onehalf}
-                g_{i, j  - \onehalf, k - \onehalf}
+                g_{i, j - \onehalf, k - \onehalf}
                 +
                 \Delta \xi^2_{k + \onehalf}
                 g_{i, j + \onehalf, k - \onehalf}
@@ -1022,34 +1024,35 @@
             +
             f_{i, j, k}
             \left[
-                4
-                \Delta \xi_{k}
+                -    
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i, j - \onehalf, k - \onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
-                \right)
-                \left(
-                    g_{i, j - \onehalf, k}
+                    g_{i, j - \onehalf, k + \onehalf}
                     -
-                    g_{i, j  + \onehalf, k}
+                    g_{i, j + \onehalf, k - \onehalf}
+                    +
+                    g_{i, j + \onehalf, k + \onehalf}
                 \right)
-                -
+                +
             \right.
         \right.
         \\ & \qquad
         \left.
             \left.
-                -
+                +
                 \Delta \xi^2_{k + \onehalf}
                 g_{i, j - \onehalf, k - \onehalf}
-                +
+                -
                 \Delta \xi^2_{k - \onehalf}
                 g_{i, j - \onehalf, k + \onehalf}
-                +
+                -
                 \Delta \xi^2_{k + \onehalf}
                 g_{i, j + \onehalf, k - \onehalf}
-                -
+                +
                 \Delta \xi^2_{k - \onehalf}
                 g_{i, j + \onehalf, k + \onehalf}
             \right]
@@ -1064,14 +1067,14 @@
                 g_{i, j - \onehalf, k + \onehalf}
                 -
                 \Delta \xi^2_{k - \onehalf}
-                g_{i, j  + \onehalf, k + \onehalf}
+                g_{i, j + \onehalf, k + \onehalf}
             \right]
             +
             f_{i, j + 1, k - 1}
             \left[
                 -
                 \Delta \xi^2_{k + \onehalf}
-                g_{i, j  + \onehalf, k - \onehalf}
+                g_{i, j + \onehalf, k - \onehalf}
             \right]
             +
         \right.
@@ -1080,18 +1083,19 @@
             +
             f_{i, j + 1, k}
             \left[
-                4
-                \Delta \xi_{k}
+                -    
+                2
+                \Delta \xi_{k-\onehalf}
+                \Delta \xi_{k+\onehalf}
                 \left(
-                    \Delta \xi_{k + \onehalf}
+                    g_{i, j + \onehalf, k - \onehalf}
                     -
-                    \Delta \xi_{k - \onehalf}
+                    g_{i, j + \onehalf, k + \onehalf}
                 \right)
-                g_{i, j + \onehalf, k}
-                -
+                +
                 \Delta \xi^2_{k + \onehalf}
                 g_{i, j + \onehalf, k - \onehalf}
-                +
+                -
                 \Delta \xi^2_{k - \onehalf}
                 g_{i, j + \onehalf, k + \onehalf}
             \right]
@@ -1176,6 +1180,10 @@
                     \frac
                         {\Delta \xi_{k - \onehalf}}
                         {\Delta \xi_{k + \onehalf}}
+                    -
+                    \frac
+                        {\Delta \xi_{k + \onehalf}}
+                        {\Delta \xi_{k - \onehalf}}
                 \right)
                 g_{i, j, k + \onehalf}
             \right]
@@ -1205,16 +1213,60 @@
     \end{split}
 \end{equation*}
 
+\begin{equation*}
+    \begin{split}
+        \left(
+            g
+            \frac
+                {\partial f}
+                {\partial \xi}
+        \right)_{i, j, k}
+        =
+        &
+        \frac
+            {1}
+            {2 \Delta \xi_{k}}
+        \left\{
+            f_{i, j, k-1}
+            \left[
+                -
+                \frac
+                    {\Delta \xi_{k + \onehalf}}
+                    {\Delta \xi_{k - \onehalf}}
+                g_{i, j, k}
+            \right]
+            +
+            f_{i, j, k}
+            \left[
+                2
+                \Delta \xi_{k}
+                \frac
+                    {\Delta \xi_{k + \onehalf} - \Delta \xi_{k - \onehalf}}
+                    {\Delta \xi_{k + \onehalf} \Delta \xi_{k - \onehalf}}
+                g_{i, j, k}
+            \right]
+            +
+        \right.
+        \\
+        &
+        \left.
+            +
+            f_{i, j, k + 1}
+            \left[
+                \frac
+                    {\Delta \xi_{k - \onehalf}}
+                    {\Delta \xi_{k + \onehalf}}
+                g_{i, j, k}
+            \right]
+        \right\}
+    \end{split}
+\end{equation*}
+
 Для удобства вывода вычислительных схем и повышения
 читаемости переобозначим коэффициенты при узловых значениях
 функции $f$. Для этого перечислим символьные переобоначения
 для коэффициентов при узлах искомой функции в указанных выше
 схемах.
-
-2D:
-\begin{equation*}
-    
-\end{equation*}
 
 2D:
 \begin{equation*}
@@ -1832,19 +1884,19 @@
         =
         f_{i-1, j, k-1}
         \left[
-            \beta_{\xi x} \left(-1, 0, -1\right)
+            \beta_{x \xi} \left(-1, 0, -1\right)
         \right]
         +
         f_{i-1, j, k}
         \left[
             \gamma_{\xi x} \left(-1, 0, 0\right)
             +
-            \beta_{\xi x} \left(-1, 0, 0\right)
+            \beta_{x \xi} \left(-1, 0, 0\right)
         \right]
         +
         f_{i-1, j, k+1}
         \left[
-            \beta_{\xi x} \left(-1, 0, 1\right)
+            \beta_{x \xi} \left(-1, 0, 1\right)
         \right]
         +
         \\
@@ -1852,19 +1904,21 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{\xi x} \left(0, 0, -1\right)
+            -
+            \beta_{x \xi} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
             \gamma_{\xi x} \left(0, 0, 0\right)
-            +
-            \beta_{\xi x} \left(0, 0, 0\right)
+            -
+            \beta_{x \xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{\xi x} \left(0, 0, 1\right)
+            -
+            \beta_{x \xi} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1872,14 +1926,14 @@
         +
         f_{i+1, j, k-1}
         \left[
-            \beta_{\xi x} \left(1, 0, -1\right)
+            \beta_{x \xi} \left(1, 0, -1\right)
         \right]
         +
         f_{i+1, j, k}
         \left[
             \gamma_{\xi x} \left(1, 0, 0\right)
             +
-            \beta_{\xi x} \left(1, 0, 0\right)
+            \beta_{x \xi} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j, k+1}
@@ -1904,19 +1958,19 @@
         =
         f_{i, j-1, k-1}
         \left[
-            \beta_{\xi y} \left(0, -1, -1\right)
+            \beta_{y \xi} \left(0, -1, -1\right)
         \right]
         +
         f_{i, j-1, k}
         \left[
             \gamma_{\xi y} \left(0, -1, 0\right)
             +
-            \beta_{\xi y} \left(0, -1, 0\right)
+            \beta_{y \xi} \left(0, -1, 0\right)
         \right]
         +
         f_{i, j-1, k+1}
         \left[
-            \beta_{\xi y} \left(0, -1, 1\right)
+            \beta_{y \xi} \left(0, -1, 1\right)
         \right]
         +
         \\
@@ -1924,19 +1978,21 @@
         +
         f_{i, j, k-1}
         \left[
-            \beta_{\xi y} \left(0, 0, -1\right)
+            -
+            \beta_{y \xi} \left(0, 0, -1\right)
         \right]
         +
         f_{i, j, k}
         \left[
             \gamma_{\xi y} \left(0, 0, 0\right)
-            +
-            \beta_{\xi y} \left(0, 0, 0\right)
+            -
+            \beta_{y \xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \beta_{\xi y} \left(0, 0, 1\right)
+            -
+            \beta_{y \xi} \left(0, 0, 1\right)
         \right]
         +
         \\
@@ -1944,19 +2000,19 @@
         +
         f_{i, j+1, k-1}
         \left[
-            \beta_{\xi y} \left(0, 1, -1\right)
+            \beta_{y \xi} \left(0, 1, -1\right)
         \right]
         +
         f_{i, j+1, k}
         \left[
             \gamma_{\xi y} \left(0, 1, 0\right)
             +
-            \beta_{\xi y} \left(0, 1, 0\right)
+            \beta_{y \xi} \left(0, 1, 0\right)
         \right]
         +
         f_{i, j+1, k+1}
         \left[
-            \beta_{\xi y} \left(0, 1, 1\right)
+            \beta_{y \xi} \left(0, 1, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -1980,12 +2036,12 @@
         +
         f_{i, j, k}
         \left[
-            \alpha_{\xi\xi} \left(0, 0, 0\right)
+            \beta_{\xi\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j, k+1}
         \left[
-            \alpha_{\xi\xi} \left(0, 0, 1\right)
+            \beta_{\xi\xi} \left(0, 0, 1\right)
         \right]
     \end{split}
 \end{equation*}
@@ -2091,6 +2147,9 @@
         f_{i-1, j, k}
         \left[
             \gamma_{\xi x} \left(-1, 0, 0\right)
+            +
+            2
+            \beta_{x \xi} \left(-1, 0, 0\right)
         \right]
         +
         \\
@@ -2105,9 +2164,6 @@
         f_{i, f, k}
         \left[
             \gamma_{\xi x} \left(0, 0, 0\right)
-            +
-            2
-            \beta_{x\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i+1, j, k-1}
@@ -2122,6 +2178,9 @@
         f_{i+1, j, k}
         \left[
             \gamma_{\xi x} \left(1, 0, 0\right)
+            +
+            2
+            \beta_{x \xi} \left(1, 0, 0\right)
         \right]
         +
         f_{i+1, j, k+1}
@@ -2167,6 +2226,9 @@
         f_{i, j-1, k}
         \left[
             \gamma_{\xi y} \left(0, -1, 0\right)
+            +
+            2
+            \beta_{y \xi} \left(0, -1, 0\right)
         \right]
         +
         \\
@@ -2181,9 +2243,6 @@
         f_{i, f, k}
         \left[
             \gamma_{\xi y} \left(0, 0, 0\right)
-            +
-            2
-            \beta_{y\xi} \left(0, 0, 0\right)
         \right]
         +
         f_{i, j+1, k-1}
@@ -2198,6 +2257,9 @@
         f_{i, j+1, k}
         \left[
             \gamma_{\xi y} \left(0, 1, 0\right)
+            +
+            2
+            \beta_{y \xi} \left(0, 1, 0\right)
         \right]
         +
         f_{i, j+1, k+1}

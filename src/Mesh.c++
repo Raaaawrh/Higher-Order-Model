@@ -24,7 +24,7 @@ Mesh<2>::Mesh(double _minX, double _minY,
       m_maxX{_maxX}, m_maxY{_maxY},
       m_lengthX{m_maxX - m_minX}, m_lengthY{m_maxY - m_minY},
       m_valuesX{vector<vector<double>>(m_sizeX, vector<double>(m_sizeY, 0.0))},
-      m_valuesY{vector<vector<double>>(m_sizeX, vector<double>(m_sizeY, 0.0))}
+      m_valuesY { vector<vector<double>>(m_sizeX, vector<double>(m_sizeY, 0.0)) }
 {
     for (size_t iX{0}; iX < m_sizeX; iX++)
     {

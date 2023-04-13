@@ -7,11 +7,11 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
-                "Mesh.c++",
-                "Field.c++",
+                "*.c++",
+                "-I${fileDirname}/../include/",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-fopenmp"
             ],
             "options": {
                 "cwd": "${fileDirname}"

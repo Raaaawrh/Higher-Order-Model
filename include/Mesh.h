@@ -23,6 +23,7 @@ class Mesh<1>
 {
 public:
     // Constructors and destructors
+    Mesh(){};
     Mesh(double _minX, double _maxX, size_t _sizeX /* reference to transform */);
     ~Mesh() {}
 
@@ -58,6 +59,7 @@ class Mesh<2>
 {
 public:
     // Constructors and destructors
+    Mesh(){};
     Mesh(double _minX, double _minY, double _maxX, double _maxY, size_t _sizeX, size_t _sizeY /* reference to transform */);
     ~Mesh(){};
 
@@ -108,6 +110,7 @@ class Mesh<3>
 {
 public:
     // Constructors and destructors
+    Mesh(){};
     Mesh(double _minX, double _minY, double _minZ, double _maxX, double _maxY, double _maxZ, size_t _sizeX, size_t _sizeY, size_t _sizeZ /* reference to transform */);
     ~Mesh(){};
 

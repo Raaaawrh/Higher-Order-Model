@@ -1,3 +1,0 @@
-/home/anatolii/Documents/GitHub/Higher-Order-Model/build/CMakeFiles/main.dir
-/home/anatolii/Documents/GitHub/Higher-Order-Model/build/CMakeFiles/edit_cache.dir
-/home/anatolii/Documents/GitHub/Higher-Order-Model/build/CMakeFiles/rebuild_cache.dir

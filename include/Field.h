@@ -14,11 +14,12 @@ public:
 };
 
 // 1D //
-template<>
+template <>
 class Field<1>
 {
 public:
     // Constructors and destructors
+    Field(){};
     Field(size_t _sizeX);
     ~Field(){};
 
@@ -36,11 +37,12 @@ private:
 };
 
 // 2D //
-template<>
+template <>
 class Field<2>
 {
 public:
     // Constructors and destructors
+    Field(){};
     Field(size_t _sizeX, size_t _sizeY);
     ~Field(){};
 
@@ -50,6 +52,7 @@ public:
 
     // Operators
     double &operator()(size_t _indexX, size_t _indexY);
+    double const operator()(size_t _indexX, size_t _indexY) const;
 
 private:
     // Sizes: X, Y
@@ -60,11 +63,12 @@ private:
 };
 
 // 3D //
-template<>
+template <>
 class Field<3>
 {
 public:
     // Constructors and destructors
+    Field(){};
     Field(size_t _sizeX, size_t _sizeY, size_t _sizeZ);
     ~Field(){};
 
@@ -75,6 +79,7 @@ public:
 
     // Operators
     double &operator()(size_t _indexX, size_t _indexY, size_t _indexZ);
+    double operator()(size_t _indexX, size_t _indexY, size_t _indexZ) const;
 
 private:
     // Sizes: X
